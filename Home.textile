@@ -1,0 +1,27 @@
+h1. Joyent pkgsrc wiki
+
+h2. Introduction
+
+This repository holds a patched copy of the pkgsrc package tree. Only the most recent stable branch (pkgsrc_2011Q4) has been treated. Most of the minor patches have already been committed upstream and will be part of the pkgsrc_2012Q1 branch, when it's released (ETA is early April).
+
+h2. SMF support
+
+The single major addition to pkgsrc here is the SMF support. To add a SMF manifest (and optional a method script) to a package, first start by creating a directory to hold SMF support files (none are provided with this repo by default), and point pkgsrc to it by defining SMFBASE in your mk.conf file. Keep a structure similar to that of pkgsrc itself, e.g. Apache will have SMF files stored under ${SMFBASE}/www/apache22.
+
+By default, 'manifest.xml' present in the proper directory is what triggers pkgsrc into baking SMF support into the package. If 'method' file exists, it is assumed to hold the method script and will be included too. You can use standard substitutions inside the files (e.g. @PREFIX@ will be substituted for the actual prefix, e.g. /opt/local).
+
+You can override these variables:
+
+|*Variable*|*Default*|*Description*|
+|SMFBASE|_none_|Directory to hold all SMF support files|
+|PKG_SMF_DIR|share/smf|Directory to install SMF files under, relative to ${PREFIX}|
+|SMF_NAME.pkgname|${PKGBASE}|Short name of the SMF service|
+|SMF_MANIFEST.pkgname|manifest.xml|Name of the manifest file|
+|SMF_METHOD.pkgname|method|Name of the method script file|
+|SMF_USER.pkgname|${ROOT_USER}|User to run the SMF method under|
+|SMF_GROUP.pkgname|${ROOT_GROUP}|Group to run the SMF method under|
+|SMF_HOME.pkgname|_none_|Initial directory to run the SMF method under|
+
+At this point, traditional *Solaris hierarchy under /var/svc is not supported yet, and SMF files will be installed under ${PREFIX}/${PKG_SMF_DIR}/${PKGBASE} always.
+
+Look at the "pk":https://github.com/mamash/pk/tree/master/meta repository for examples.
