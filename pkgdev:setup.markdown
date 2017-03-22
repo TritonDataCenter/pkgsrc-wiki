@@ -32,15 +32,15 @@ For SmartOS users we provide a `pkgbuild` image.  This contains everything you
 need to get going quickly.
 
 Use the image version which matches the package set you want to build.  For
-example, to build packages for 16.4.x/2016Q4 images use the 16.4.x pkgbuild
-image.  If you want to develop against pkgsrc trunk, then use whatever the most
-recent release available is.
+example, to build packages for 16.4.x/2016Q4 images use the latest 16.4.x
+pkgbuild image.  If you want to develop against pkgsrc trunk, then use
+whichever the most recent release available is.
 
 ```console
 $ imgadm update
 $ imgadm avail | awk '/pkgbuild.*16.4/ {print}'
-880c4958-d651-11e6-a654-dfde57efd4bf pkgbuild 16.4.0 smartos zone-dataset 2017-01-09
-$ imgadm import 880c4958-d651-11e6-a654-dfde57efd4bf
+0d649af0-e6ed-11e6-8689-7fb3356bad96 pkgbuild 16.4.1 smartos zone-dataset 2017-01-30
+$ imgadm import 0d649af0-e6ed-11e6-8689-7fb3356bad96
 ```
 
 Create a zone using the chosen image uuid, giving it plenty of RAM and quota if
@@ -49,7 +49,7 @@ you are planning to build large packages.  For example:
 ```json
 {
   "brand": "joyent",
-  "image_uuid": "880c4958-d651-11e6-a654-dfde57efd4bf",
+  "image_uuid": "0d649af0-e6ed-11e6-8689-7fb3356bad96",
   "alias": "pkgbuild-16-4",
   "max_physical_memory": 8192,
   "quota": 16384,
