@@ -10,6 +10,7 @@
 1. <a href="#create-sandbox">Create Sandbox</a>
 
 <a name="introduction"/>
+
 ## Introduction
 
 In order to get started with package development it is recommended that you use
@@ -18,11 +19,13 @@ provides scripts and configuration files used by Joyent to produce the official
 binary packages, and helps to ensure your environment is similar.
 
 <a name="os-setup"/>
+
 ## OS setup
 
 Follow the instructions below for your target OS.
 
 <a name="os-setup-smartos"/>
+
 ### SmartOS
 
 For SmartOS users we provide a `pkgbuild` image.  This contains everything you
@@ -68,11 +71,13 @@ $ vmadm create -f pkgbuild.json
 ```
 
 <a name="os-setup-osx"/>
+
 ### Mac OS X
 
 XXX: write up based on clean VM
 
 <a name="os-setup-ubuntu-linux"/>
+
 ### Ubuntu Linux
 
 Perform a full upgrade.
@@ -112,6 +117,7 @@ $ reboot
 ```
 
 <a name="os-setup-redhat-linux"/>
+
 ### RedHat Linux
 
 Perform a full upgrade.
@@ -146,6 +152,7 @@ $ reboot
 ```
 
 <a name="fetch-repositories"/>
+
 ### Fetch repositories
 
 Fetch both the [pkgsrc](https://github.com/joyent/pkgsrc) and
@@ -188,6 +195,7 @@ $ git submodule update
 While for Linux you don't need to do anything and can use the default `trunk`.
 
 <a name="create-sandbox"/>
+
 ## Create Sandbox
 
 The pkgbuild repository aims to recreate the same environment that produces the

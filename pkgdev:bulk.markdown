@@ -12,6 +12,7 @@
 1. <a href="#perform-bulk-build">Perform bulk build</a>
 
 <a name="introduction"/>
+
 ## Introduction
 
 Bulk builds are a way to automatically build a large number of packages,
@@ -26,6 +27,7 @@ session, but on the primary OS.  The bulk build software and build scripts set
 up sandbox chroots automatically as part of the build process.
 
 <a name="generate-ssh-key"/>
+
 ### Generate SSH key
 
 Bulk builds support distributed builds via SSH, but even for single host builds
@@ -45,6 +47,7 @@ $ ssh 127.0.0.1 echo
 ```
 
 <a name="build-pbulk-tools"/>
+
 ## Build pbulk tools
 
 The first set of packages we need to build are the pbulk tools, and any
@@ -77,6 +80,7 @@ This may take a while, during which time it will build a pkgsrc bootstrap kit
 and a bunch of packages.
 
 <a name="install-manta-tools"/>
+
 ## Install Manta tools (optional)
 
 If you wish to publish your results to Manta, install the Manta CLI into a
@@ -94,6 +98,7 @@ $ exit
 ```
 
 <a name="configure-pbulk"/>
+
 ## Configure pbulk
 
 Now we can switch to configuring our main bulk build.  Start by setting
@@ -114,6 +119,7 @@ $ cd /data/pkgbuild/conf/${PKGBUILD}
 ```
 
 <a name="configure-pbulk-pbulk-conf-local"/>
+
 ### pbulk.conf.local
 
 This file contains overrides from the primary `pbulk.conf` file, so look at
@@ -172,6 +178,7 @@ You will need to pre-create the `${report_rsync_target}` directory to avoid
 rsync failures.
 
 <a name="configure-pbulk-pkgbuild-conf-local"/>
+
 ### pkgbuild.conf.local
 
 This file allows you to override any variables from the main `pkgbuild.conf`
@@ -189,6 +196,7 @@ PKGSRC_GPG_SIGN_AS=DEADBEEF
 ```
 
 <a name="configure-pbulk-mk-conf-local"/>
+
 ### mk.conf.local
 
 You can set your own pkgsrc variables in `mk.conf.local`, for example if you
@@ -204,6 +212,7 @@ PKG_OPTIONS.mutt+=	mutt-compressed-mbox
 ```
 
 <a name="perform-bulk-build"/>
+
 ## Perform bulk build
 
 Now that everything is set up we can perform the bulk build.

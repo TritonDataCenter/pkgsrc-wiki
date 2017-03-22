@@ -14,6 +14,7 @@
 1. <a href="#further-information">Further Information</a>
 
 <a name="introduction"/>
+
 ## Introduction
 
 This tutorial will use [augeas](http://augeas.net/) as an example of how to
@@ -31,6 +32,7 @@ This guide assumed that you have followed the
 appropriate `run-sandbox` session.
 
 <a name="setup"/>
+
 ## Setup
 
 First, install the `pkgtools/url2pkg` package, as this massively simplifies the
@@ -45,6 +47,7 @@ task in hand.
 ```
 
 <a name="create-package-directory"/>
+
 ## Create Package Directory
 
 Next, create a new package directory, choosing the most appropriate category (in
@@ -58,6 +61,7 @@ $ url2pkg http://download.augeas.net/augeas-1.0.0.tar.gz
 ```
 
 <a name="create-initial-package-files"/>
+
 ## Create Initial Package Files
 
 First it will open an editor session on `Makefile`.  You should customise a few
@@ -98,6 +102,7 @@ At this point you should edit `DESCR` and put in a few lines which describe the
 package.
 
 <a name="build"/>
+
 ## Build
 
 The general cycle will then be:
@@ -113,6 +118,7 @@ additional checks.
 For `augeas`, a couple of things were needed.
 
 <a name="patches"/>
+
 ## Patches
 
 The first problem hit was:
@@ -175,6 +181,7 @@ $ wrkdir=$(bmake show-var VARNAME=WRKSRC)
 This was enough to fix the `==` problem.
 
 <a name="dependencies"/>
+
 ## Dependencies
 
 Dependencies in pkgsrc are primarily handled in two ways, either with a
@@ -256,6 +263,7 @@ After this, the package finally completes a `bmake` with no problems.  The
 final step is to get the `install` phase working.
 
 <a name="install"/>
+
 ## Install
 
 First we need to run a `stage-install` which will execute `make install` into a
@@ -299,6 +307,7 @@ $ bmake install
 ```
 
 <a name="create-buildlink3"/>
+
 ## Create buildlink3.mk
 
 As we are installing a library package, we should provide a `buildlink3.mk`
@@ -313,6 +322,7 @@ This will create a template file but you should read and edit, removing the
 lines marked with `XXX` and making any changes they recommend.
 
 <a name="verify"/>
+
 ## Verify
 
 Once we have a working package it's worth doing a couple of checks to make sure
@@ -354,6 +364,7 @@ looks fine.
 ```
 
 <a name="upstream"/>
+
 ## Upstream
 
 The final - and sometimes most challenging - part is to get your shiny new
@@ -370,6 +381,7 @@ package integrated into pkgsrc.  There are a few options:
   [pkgsrc-joyent](https://github.com/joyent/pkgsrc-joyent)
 
 <a name="further-information"/>
+
 ## Further Information
 
 This post only scratches the surface of adding a new package.  pkgsrc provides
