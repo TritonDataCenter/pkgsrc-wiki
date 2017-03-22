@@ -2,10 +2,10 @@
 
 1. <a href="#introduction">Introduction</a>
 1. <a href="#os-setup">OS setup</a>
-  1. <a href="#os-setup-smartos">SmartOS</a>
-  1. <a href="#os-setup-osx">Mac OS X</a>
-  1. <a href="#os-setup-ubuntu-linux">Ubuntu Linux</a>
-  1. <a href="#os-setup-redhat-linux">RedHat Linux</a>
+    1. <a href="#os-setup-smartos">SmartOS</a>
+    1. <a href="#os-setup-osx">Mac OS X</a>
+    1. <a href="#os-setup-ubuntu-linux">Ubuntu Linux</a>
+    1. <a href="#os-setup-redhat-linux">RedHat Linux</a>
 1. <a href="#fetch-repositories">Fetch Repositories</a>
 1. <a href="#create-sandbox">Create Sandbox</a>
 
@@ -153,7 +153,7 @@ $ reboot
 
 <a name="fetch-repositories"/>
 
-### Fetch repositories
+## Fetch repositories
 
 Fetch both the [pkgsrc](https://github.com/joyent/pkgsrc) and
 [pkgbuild](https://github.com/joyent/pkgbuild) repositories.  If you are using
