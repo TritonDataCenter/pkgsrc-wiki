@@ -29,7 +29,7 @@ supported by Joyent for 3 years.  The approximate timeline is as follows:
 | 30 June 2016  | `pkgsrc-2016Q2` | No                  |
 | 30 Sept 2016  | `pkgsrc-2016Q3` | No                  |
 | 31 Dec 2016   | `pkgsrc-2016Q4` | Until pkgsrc-2019Q4 |
-| 31 March 2017 | `pkgsrc-201671` | No                  |
+| 31 March 2017 | `pkgsrc-2017Q1` | No                  |
 | ...           | ...             | ...                 |
 
 While the branch may be created on the expected branch date, it may be a few
