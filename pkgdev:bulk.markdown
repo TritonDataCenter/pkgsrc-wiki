@@ -130,7 +130,7 @@ used for the Ubuntu Linux 16.10 builds.
 $ vi pbulk.conf.local
 ```
 
-```conf
+```bash
 pkgsrc=/data/pkgsrc
 report_from_addr="pkgsrc@example.com"
 report_from_name="pkgsrc bulk builds"
@@ -151,7 +151,7 @@ If you wish to perform a simpler build to start with, just to check that
 everything is working ok, or if you only need to build certain packages, then
 here are some recommended settings for a limited bulk build:
 
-```conf
+```bash
 limited_list=/data/build-packages-list
 build_chroots=1
 scan_chroots=1
@@ -168,7 +168,7 @@ If you'd prefer to simply rsync the report to an existing HTTP server rather
 uploading than Manta, configure the following variables and remove the
 `manta_*` variables:
 
-```conf
+```bash
 report_rsync_args="-avz --delete-excluded"
 report_rsync_target="192.168.1.10:/data/reports"
 base_url="http://192.168.1.10/reports"

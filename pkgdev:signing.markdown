@@ -24,7 +24,7 @@ In a pkgbuild zone, but not inside a sandbox, install GnuPG from pkgsrc, as the
 one provided by the platform is too old and incomplete.
 
 ```console
-$ pkgin in gnupg2
+$ pkgin -y install gnupg2
 ```
 
 Note that the command installed from pkgsrc is `gpg2`, while `gpg` will still
@@ -140,14 +140,14 @@ section.
 Add to `mk.conf.local` for your target build (e.g.
 `/data/pkgbuild/conf/2017Q1-x86_64/mk.conf.local`):
 
-```make
-SIGN_PACKAGES=	gpg
+```bash
+SIGN_PACKAGES=gpg
 ```
 
 Add to `pkgbuild.conf.local` for your target build (e.g.
 `/data/pkgbuild/conf/2017Q1-x86_64/pkgbuild.conf.local`):
 
-```make
+```bash
 PKGSRC_GPG_SIGN_AS=F527BD41
 ```
 
@@ -223,7 +223,7 @@ $ exit
 Configure `/opt/local/etc/pkg_install.conf` (wherever you have chosen to
 perform the signing) with your key details:
 
-```make
+```bash
 GPG=/opt/local/bin/gpg2
 GPG_SIGN_AS=F527BD41
 ```
