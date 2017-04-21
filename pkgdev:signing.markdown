@@ -83,7 +83,7 @@ uid       [ultimate] My Package Key <pkgsrc@example.com>
 sub   4096R/5704520E 2017-04-21
 ```
 
-1. <a href="#configure-gnupg">Configure GnuPG</a>
+<a name="configure-gnupg"/>
 
 ## Configure GnuPG
 
