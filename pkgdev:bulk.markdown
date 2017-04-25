@@ -26,6 +26,13 @@ Note that the steps below should be NOT be performed inside a `run-sandbox`
 session, but on the primary OS.  The bulk build software and build scripts set
 up sandbox chroots automatically as part of the build process.
 
+<a name="host-setup"/>
+
+### Host Setup
+
+Ensure you have followed the necessary [setup
+instructions](/joyent/pkgsrc/wiki/pkgdev:setup) for your target OS first.
+
 <a name="generate-ssh-key"/>
 
 ### Generate SSH key
