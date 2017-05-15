@@ -157,11 +157,6 @@ This is the usual way of handling patches (ensuring `pkgtools/pkgdiff` is
 installed first):
 
 ```console
-: Set up patches directory and some useful variables.
-$ mkdir patches
-$ patchdir=$(pwd -P)/patches
-$ wrkdir=$(bmake show-var VARNAME=WRKSRC)
-
 : Use the 'cdwrk' alias to cd into the WRKSRC area.
 # cdwrk
 
