@@ -52,7 +52,7 @@ you are planning to build large packages.  For example:
   "image_uuid": "0d649af0-e6ed-11e6-8689-7fb3356bad96",
   "alias": "pkgbuild-16-4",
   "max_physical_memory": 8192,
-  "quota": 16384,
+  "quota": 16,
   "resolvers": [
     "8.8.8.8"
   ],
