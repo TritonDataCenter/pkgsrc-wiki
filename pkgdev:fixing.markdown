@@ -80,7 +80,7 @@ shutdown                            rootprobe.o
 ld: fatal: symbol referencing errors. No output written to rootprobe
 collect2: error: ld returned 1 exit status
 *** [rootprobe] Error code 1
-{% endhighlight %}
+```
 
 Add the following to the Makefile:
 
@@ -170,9 +170,9 @@ LDFLAGS += -Wall -O2 -pthread
 
 then we could have fixed that in the main pkgsrc `Makefile` with
 
-{% highlight make %}
+```make
 MAKE_ENV+=	LDFLAGS="-lsocket -lnsl"
-{% endhighlight %}
+```
 
 or similar, however we now have no choice but to directly edit `Makefile.unix`.
 Thankfully, pkgsrc provides a couple of ways to easily do this, which we will
@@ -222,7 +222,7 @@ $ bmake clean
 $ bmake install
 ...
 => Creating binary package /home/pbulk/build/net/3proxy/work/.packages/3proxy-0.5.3.11nb1.tgz
-{% endhighlight %}
+```
 
 Two other `subst` features you may want are:
 
