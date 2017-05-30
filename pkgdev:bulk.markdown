@@ -28,14 +28,14 @@ up sandbox chroots automatically as part of the build process.
 
 <a name="host-setup"/>
 
-### Host Setup
+## Host Setup
 
 Ensure you have followed the necessary [setup
 instructions](/joyent/pkgsrc/wiki/pkgdev:setup) for your target OS first.
 
 <a name="generate-ssh-key"/>
 
-### Generate SSH key
+## Generate SSH key
 
 Bulk builds support distributed builds via SSH, but even for single host builds
 we use SSH to launch local builds.  Generate a private key for the host in
