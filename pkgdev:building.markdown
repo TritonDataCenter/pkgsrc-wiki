@@ -36,17 +36,17 @@ it will show a couple of things that need to be covered.
 
 First, finding it.  Often the easiest way is with a simple glob:
 
-{% highlight console %}
+```console
 $ cd /data/pkgsrc
 $ ls -d */*nmap*
 net/nmap
-{% endhighlight %}
+```
 
 If you want a more featured search, you can do:
 
-{% highlight console %}
+```console
 $ bmake search key=nmap
-{% endhighlight %}
+```
 
 though the first time you run this it creates the `INDEX` file it requires, and
 that can take a long time.  Another option is to use the
@@ -55,9 +55,9 @@ that can take a long time.  Another option is to use the
 Once you have selected a package, `cd` into its directory in order to perform
 any further actions.
 
-{% highlight console %}
+```console
 $ cd net/nmap
-{% endhighlight %}
+```
 
 <a name="configuration-files"/>
 
@@ -70,9 +70,9 @@ is stored relative to `PKG_SYSCONFDIR` which differs depending on the OS and
 package set, so to find the correct location for the sandbox you have created
 you can run (assuming you are in a package directory):
 
-{% highlight console %}
+```console
 $ echo $(bmake show-var VARNAME=PKG_SYSCONFDIR)/mk.conf
-{% endhighlight %}
+```
 
 Changes made to this file will be lost upon exiting the sandbox, so it is
 useful for temporary changes which you do not wish to retain.
@@ -89,11 +89,11 @@ they should go in this file.
 
 So, for example, with a 2016Q4-x86_64 package set you would have:
 
-{% highlight text %}
+```
 /opt/local/etc/mk.conf
 /data/pkgbuild/conf/2016Q4-x86_64/mk.conf
 /data/pkgbuild/conf/2016Q4-x86_64/mk.conf.local
-{% endhighlight %}
+```
 
 The reason for having separate files is because the primary `mk.conf` is part
 of the bootstrap kit, and so cannot be easily edited.  By having per-pkgbuild
@@ -106,14 +106,14 @@ having to re-generate and distribute new bootstrap kits.
 
 Next, let's look at any options the package supports.
 
-{% highlight console %}
+```console
 $ bmake show-options
-{% endhighlight %}
+```
 
 If the package supports build options, as `net/nmap` does, you'll see
 something like:
 
-{% highlight text %}
+```
 Any of the following general options may be selected:
         inet6    Enable support for IPv6.
         lua      Enable Lua support.
@@ -128,35 +128,24 @@ These options are currently enabled:
 
 You can select which build options to use by setting PKG_DEFAULT_OPTIONS
 or PKG_OPTIONS.nmap.
-{% endhighlight %}
+```
 
 These options are configured in `mk.conf`, so either add it to the primary
 `mk.conf` if you wish to just test them temporarily, or add them to
 `mk.conf.local` as described above for a more permanent change:
 
-{% highlight make %}
+```make
 PKG_OPTIONS.nmap+=	ndiff
-{% endhighlight %}
-
-Re-running the `show-options` command should now print:
-
-{% highlight text %}
-...
-These options are currently enabled:
-        inet6 ndiff
-...
-{% endhighlight %}
-
-<a name="building-a-package"/>
+```
 
 ## Building A Package
 
 Now finally, we can go ahead and build the package.  The output from this will
 be long, so you may want to `tee` it to a file for reviewing:
 
-{% highlight console %}
+```console
 $ bmake 2>&1 | tee /var/tmp/nmap.log
-{% endhighlight %}
+```
 
 Assuming this completes ok, you should note the main stages that make up a
 package build:
@@ -166,20 +155,20 @@ package build:
   installed to calculate the `SHA1`, `RMD160`, and `SHA512` checksums of the
   source tarball and any package patches.
 
-{% highlight text %}
+```
 => Bootstrap dependency digest>=20010302: NOT found
 => Verifying bin-install for ../../pkgtools/digest
 ===> Binary install for digest>=20010302
 => Installing digest>=20010302 from /data/packages/SmartOS/2016Q4/x86_64/All;http://0.0.0.0:8080/packages/SmartOS/2016Q4/x86_64//All
 digest-20160304 successfully installed.
 ...
-{% endhighlight %}
+```
 
 * __`fetch`__ and __`checksum`__ then run to download the source tarball for
   this particular package, and then verify the checksum matches that stored by
   pkgsrc, to ensure it was downloaded from a good source:
 
-{% highlight text %}
+```
 => Fetching nmap-7.40.tar.bz2
 => Total size: 9043221 bytes
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
@@ -188,24 +177,24 @@ digest-20160304 successfully installed.
 => Checksum SHA1 OK for nmap-7.40.tar.bz2
 => Checksum RMD160 OK for nmap-7.40.tar.bz2
 => Checksum SHA512 OK for nmap-7.40.tar.bz2
-{% endhighlight %}
+```
 
 * __`depends`__ then installs all packages required for both build and runtime
   for the package in question:
 
-{% highlight text %}
+```
 => Tool dependency libtool-base>=2.4.2nb9: NOT found
 => Verifying bin-install for ../../devel/libtool-base
 ===> Binary install for libtool-base>=2.4.2nb9
 => Installing libtool-base>=2.4.2nb9 from /data/packages/SmartOS/2016Q4/x86_64/All;http://0.0.0.0:8080/packages/SmartOS/2016Q4/x86_64//All
 libtool-base-2.4.2nb13 successfully installed.
-{% endhighlight %}
+```
 
 * __`extract`__ and __`patch`__ then unpack the source and apply any pkgsrc
   patches to the package.  The patches are located in the `patches/`
   sub-directory of each package:
 
-{% highlight text %}
+```
 ===> Extracting for nmap-7.40
 ===> Patching for nmap-7.40
 => Applying pkgsrc patches for nmap-7.40
@@ -226,12 +215,12 @@ Hunk #1 succeeded at 6242 (offset 50 lines).
 Hunk #2 succeeded at 6897 (offset 2 lines).
 done
 ...
-{% endhighlight %}
+```
 
 * The bulk of the build is performed by __`configure`__ and __`build`__ which
   for most software will consist of `./configure && make`.
 
-{% highlight text %}
+```
 ===> Configuring for nmap-7.40
 ...
 Configured with: ndiff nping openssl ncat
@@ -240,7 +229,7 @@ Type make (or gmake on some *BSD machines) to compile.
 ===> Building for nmap-7.40
 ...
 gmake[1]: Leaving directory '/home/pbulk/build/net/nmap/work/nmap-7.40/nping'
-{% endhighlight %}
+```
 
 <a name="installing-a-package"/>
 
@@ -251,7 +240,7 @@ target.  This installs the software to a temporary `DESTDIR` directory, and
 then creates a binary package from that.  The binary package is then installed
 into the real `PREFIX` using `pkg_add`:
 
-{% highlight text %}
+```
 $ bmake install
 ===> Installing for nmap-7.40
 ...
@@ -264,11 +253,11 @@ $ bmake install
 => Checking for work-directory references in nmap-7.40
 => Creating binary package /home/pbulk/build/net/nmap/work/.packages/nmap-7.40.tgz
 ===> Installing binary package of nmap-7.40
-{% endhighlight %}
+```
 
 You can now verify it is installed, and test it:
 
-{% highlight console %}
+```console
 $ type nmap
 nmap is /opt/local/bin/nmap
 
@@ -278,7 +267,7 @@ Read data files from: /opt/local/share/nmap
 WARNING: No targets were specified, so 0 hosts scanned.
 Nmap done: 0 IP addresses (0 hosts up) scanned in 0.15 seconds
            Raw packets sent: 0 (0B) | Rcvd: 0 (0B)
-{% endhighlight %}
+```
 
 Note that the binary package was created under `/home/pbulk`.  This is a
 temporary directory which is destroyed when you exit the sandbox.  In order to
@@ -286,18 +275,18 @@ save the package to a permanent location you need to call the `package` target.
 Note though that this will overwrite any existing package that may already be
 stored there.
 
-{% highlight console %}
+```console
 $ bmake package
 => Bootstrap dependency digest>=20010302: found digest-20160304
 ===> Building binary package for nmap-7.40
 => Creating binary package /data/packages/SmartOS/2016Q4/x86_64/All/nmap-7.40.tgz
-{% endhighlight %}
+```
 
 You can now install the package outside of the sandbox using:
 
-{% highlight console %}
+```console
 $ pkg_add /data/packages/SmartOS/2016Q4/x86_64/All/nmap-7.40.tgz
-{% endhighlight %}
+```
 
 <a name="cleanup"/>
 
@@ -310,18 +299,18 @@ If you prefer to just clean up the build artefacts, for example if you are
 using the sandbox to build more packages but do not have a lot of space, you
 can use the `clean` and `clean-depends` targets.
 
-{% highlight console %}
+```console
 $ bmake clean clean-depends
-{% endhighlight %}
+```
 
 Sometimes though it's easier (and faster) to just wipe out the build area
 completely.  This is configured by the `WRKOBJDIR` variable, so:
 
-{% highlight console %}
+```console
 $ bmake show-var VARNAME=WRKOBJDIR
 /home/pbulk/build
 $ rm -rf /home/pbulk/build/*
-{% endhighlight %}
+```
 
 <a name="summary"/>
 
