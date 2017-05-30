@@ -318,4 +318,4 @@ $ rm -rf /home/pbulk/build/*
 
 This should hopefully be enough to get you started, but is only a small example
 of what pkgsrc can do and how it is configured.  For more in-depth information
-please refer to [https://www.netbsd.org/docs/pkgsrc/](the pkgsrc guide).
+please refer to [the pkgsrc guide](https://www.netbsd.org/docs/pkgsrc/).
