@@ -10,6 +10,7 @@ Package Development
 * [Setup](/joyent/pkgsrc/wiki/pkgdev:setup)
 * [Building Packages](/joyent/pkgsrc/wiki/pkgdev:building)
 * [Creating Packages](/joyent/pkgsrc/wiki/pkgdev:creating)
+* [Fixing Packages](/joyent/pkgsrc/wiki/pkgdev:fixing)
 * [Signing Packages](/joyent/pkgsrc/wiki/pkgdev:signing)
 * [Bulk Builds](/joyent/pkgsrc/wiki/pkgdev:bulk)
 
