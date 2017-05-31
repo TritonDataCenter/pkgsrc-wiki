@@ -74,7 +74,64 @@ $ vmadm create -f pkgbuild.json
 
 ### Mac OS X
 
-XXX: write up based on clean VM
+Create the pbulk user, used for unprivileged builds.  The easiest way to do
+this is via the System Preferences dialog, but if you wish to use the command
+line then something like might work (adjust UID for your system):
+
+```console
+$ user="pbulk"
+$ uid=500
+$ gid=20
+$ comment="pbulk user"
+
+$ dscl . -create /users/$user RecordName $user
+$ dscl . -create /users/$user RecordType dsRecTypeNative:users
+$ dscl . -create /users/$user UniqueID $uid
+$ dscl . -create /users/$user PrimaryGroupID $gid
+$ dscl . -create /users/$user NFSHomeDirectory "/Users/$user"
+$ dscl . -create /users/$user UserShell "/bin/bash"
+$ dscl . -create /users/$user Comment "$comment"
+$ dscl . -delete /users/$user AuthenticationAuthority
+$ dscl . -create /users/$user Password '*'
+$ dscl . -create /users/$user IsHidden 1
+
+$ mkdir /Users/pbulk
+$ chown pbulk:staff /Users/pbulk
+```
+
+Mac OS X can run into issues with case-insensitive file systems, so it is often
+worth creating a separate file system image on which to store pkgsrc.
+
+```console
+$ hdiutil create -fs JHFS+X -size 10g -type SPARSE -volname "data" data
+$ sudo hdiutil attach -mountpoint /data data.sparseimage
+```
+
+This directory will need to be NFS exported for the sandboxes to access it, as
+Mac OS X does not ship with any adequate null/bind mount options.
+
+```console
+$ cat >/etc/exports <<EOF
+/data				-alldirs -maproot=root 127.0.0.1
+/private/var/spool/postfix	-maproot=root 127.0.0.1
+EOF
+```
+
+Check that the directories are exported.  The NFS daemon detects changes to
+`/etc/exports` and will update mounts automatically.
+
+```console
+$ showmount -e
+Exports list on localhost:
+/private/var/spool/postfix		127.0.0.1
+/data					127.0.0.1
+```
+
+If you are running macOS Sierra 10.12.4 or newer you will unfortunately need to
+[disable System Integrity
+Protection](https://www.howtogeek.com/230424/how-to-disable-system-integrity-protection-on-a-mac-and-why-you-shouldnt/)
+as Apple has restricted the ability to update the mDNS service which is
+required for DNS resolution inside build chroots.
 
 <a name="os-setup-ubuntu-linux"/>
 
@@ -194,6 +251,18 @@ $ git submodule update
 
 While for Linux you don't need to do anything and can use the default `trunk`.
 
+## Fetch bootstrap and packages
+
+Darwin-specific for now.
+
+```console
+$ mkdir -p /data/packages/Darwin/bootstrap-pbulk
+$ cd /data/packages/Darwin/bootstrap-pbulk
+$ for bs in i386 pbulk32 pbulk64 x86_64; do
+>   curl -O https://pkgsrc.joyent.com/packages/Darwin/bootstrap-pbulk/bootstrap-trunk-${bs}.tar.gz
+> done
+```
+
 <a name="create-sandbox"/>
 
 ## Create Sandbox
@@ -209,6 +278,7 @@ Some examples:
 ```console
 run-sandbox 2016Q4-x86_64       # Create a 64-bit SmartOS sandbox for 16.4.x
 run-sandbox 2016Q4-i386         # Create a 32-bit SmartOS sandbox for 16.4.x
+run-sandbox 2017Q1-tools        # Create a GZ "tools" SmartOS sandbox for 17.1.x
 run-sandbox osx-trunk-x86_64    # Create a 64-bit OS X sandbox
 run-sandbox linux-trunk-i386    # Create a 32-bit Linux sandbox
 ```
