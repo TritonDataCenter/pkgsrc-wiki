@@ -186,7 +186,7 @@ $ yum update
 Install required packages.
 
 ```console
-$ yum install bzip2 ed gcc gcc-c++ git screen
+$ yum install bzip2 ed gcc gcc-c++ git psmisc screen
 ```
 
 Create the pbulk user, used for unprivileged builds.
