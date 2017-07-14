@@ -24,8 +24,9 @@ With 18,000+ packages being constantly updated and changed, producing a full
 ChangeLog would be an exercise in futility and not very helpful.  So instead we
 try to summarise the most important changes in each quarterly release.
 
-Note that announcements of major new packages does not guarantee that they will
-be available in the binary package repositories.
+While this page is primarily for the illumos quarterly package sets, the
+changes listed may be generic to pkgsrc and may not be available on illumos or
+enabled in our binary packages.
 
 <a name="pkgsrc-2017Q2"/>
 
@@ -68,11 +69,65 @@ be available in the binary package repositories.
 
 ## Changes in pkgsrc-2017Q1
 
+- Number of binary packages available:
+  + **x86_64**: 16,000+
+  + **i386**: 16,000+
+  + **multiarch**: 14,000+
+
+- New packages introduced (not all available as binary packages) include:
+  + Python 3.6
+  + Nextcloud 11
+  + Firefox 45.8.0 and 52.0.1
+  + Gradle 3.4
+  + pkg_comp 2.0
+  + qmail 1.03nb24 binary packages work, supporting common use cases
+  + Many additional Python, Perl and Ruby modules
+  + Many additional TeX packages
+
+- Package removals include:
+  + GCC 4.5, 4.6, and 4.7
+  + Xen 3.1, 3.3, and 4.1
+
+- Infrastructure changes:
+  + Default version of Apache changed from 2.2 from 2.4 (this was already the
+    case with our illumos packages).
+  + Improvements to the curses.mk infrastructure with many more packages
+    updated to support native curses/terminfo if available.
+
 - Commit stats since 2016Q4:
   + 192 packages added
   + 25 packages removed
   + 1,458 package updates
   + 3,901 commits from 68 contributors
+
+<a name="pkgsrc-2016Q4"/>
+
+## Changes in pkgsrc-2016Q4
+
+New LTS branch, supported until the release of pkgsrc-2019Q4.
+
+- Number of binary packages available:
+  + **x86_64**: 15,000+
+  + **i386**: 15,000+
+  + **multiarch**: 14,000+
+
+- New packages introduced (not all available as binary packages) include:
+  + Tryton 4.2.0
+  + Firefox 50.1.0
+  + Go 1.7.4
+  + MySQL 5.7.17
+  + PostgreSQL 9.5.5
+  + PHP 7.1.0
+
+- Infrastructure changes:
+  + cwrappers was enabled by default on Darwin, Linux, NetBSD, and
+    SunOS. This replaces some a part of the infrastructure that was
+    written in shell with a C implementation and speeds up the build.
+
+- Commit stats since 2016Q3:
+  + 159 packages added
+  + 1,359 package updates
+  + 3,172 commits from 72 contributors
 
 <a name="pkgsrc-2016Q3"/>
 
