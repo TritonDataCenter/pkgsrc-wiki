@@ -5,6 +5,7 @@
 
 About
 * [Releases / Versioning](/joyent/pkgsrc/wiki/about:releases)
+* [Quarterly Release Changes](/joyent/pkgsrc/wiki/about:changes)
 
 Package Development
 * [Setup](/joyent/pkgsrc/wiki/pkgdev:setup)
