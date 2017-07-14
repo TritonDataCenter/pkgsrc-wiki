@@ -1,20 +1,20 @@
 ## Contents
 
 1. <a href="#introduction">Introduction</a>
-1. <a href="#pkgsrc-2017Q2">Major changes in pkgsrc-2017Q2</a>
-1. <a href="#pkgsrc-2017Q1">Major changes in pkgsrc-2017Q1</a>
-1. <a href="#pkgsrc-2016Q4">Major changes in pkgsrc-2016Q4</a>
-1. <a href="#pkgsrc-2016Q3">Major changes in pkgsrc-2016Q3</a>
-1. <a href="#pkgsrc-2016Q2">Major changes in pkgsrc-2016Q2</a>
-1. <a href="#pkgsrc-2016Q1">Major changes in pkgsrc-2016Q1</a>
-1. <a href="#pkgsrc-2015Q4">Major changes in pkgsrc-2015Q4</a>
-1. <a href="#pkgsrc-2015Q3">Major changes in pkgsrc-2015Q3</a>
-1. <a href="#pkgsrc-2015Q2">Major changes in pkgsrc-2015Q2</a>
-1. <a href="#pkgsrc-2015Q1">Major changes in pkgsrc-2015Q1</a>
-1. <a href="#pkgsrc-2014Q4">Major changes in pkgsrc-2014Q4</a>
-1. <a href="#pkgsrc-2014Q3">Major changes in pkgsrc-2014Q3</a>
-1. <a href="#pkgsrc-2014Q2">Major changes in pkgsrc-2014Q2</a>
-1. <a href="#pkgsrc-2014Q1">Major changes in pkgsrc-2014Q1</a>
+1. <a href="#pkgsrc-2017Q2">Changes in pkgsrc-2017Q2</a>
+1. <a href="#pkgsrc-2017Q1">Changes in pkgsrc-2017Q1</a>
+1. <a href="#pkgsrc-2016Q4">Changes in pkgsrc-2016Q4</a>
+1. <a href="#pkgsrc-2016Q3">Changes in pkgsrc-2016Q3</a>
+1. <a href="#pkgsrc-2016Q2">Changes in pkgsrc-2016Q2</a>
+1. <a href="#pkgsrc-2016Q1">Changes in pkgsrc-2016Q1</a>
+1. <a href="#pkgsrc-2015Q4">Changes in pkgsrc-2015Q4</a>
+1. <a href="#pkgsrc-2015Q3">Changes in pkgsrc-2015Q3</a>
+1. <a href="#pkgsrc-2015Q2">Changes in pkgsrc-2015Q2</a>
+1. <a href="#pkgsrc-2015Q1">Changes in pkgsrc-2015Q1</a>
+1. <a href="#pkgsrc-2014Q4">Changes in pkgsrc-2014Q4</a>
+1. <a href="#pkgsrc-2014Q3">Changes in pkgsrc-2014Q3</a>
+1. <a href="#pkgsrc-2014Q2">Changes in pkgsrc-2014Q2</a>
+1. <a href="#pkgsrc-2014Q1">Changes in pkgsrc-2014Q1</a>
 
 <a name="introduction"/>
 
@@ -29,33 +29,54 @@ be available in the binary package repositories.
 
 <a name="pkgsrc-2017Q2"/>
 
-## Major changes in pkgsrc-2017Q2
+## Changes in pkgsrc-2017Q2
 
-* Binary packages available: x86_64 (16,500+), i386 (16,500+), multiarch (14,500+)
-* New packages introduced include:
- - Firefox 54
- - GCC 7.1
- - MATE 1.18
- - Ruby 2.4
- - Ruby on Rails 4.2
- - TeX Live 2017
- - Thunderbird 52.1
- - Xen 4.8
-* Package removals include:
- - Ruby 1.8
- - Ruby 2.1
-* Infrastructure changes:
- - Implement optional new pkgtasks and init infrastructure for
-   pkginstall.
- - Various enhancements and fixes for building with ccache.
- - Add support to USE_LANGUAGES for newer C++ standards.
- - Enhanced support for SSP, FORTIFY, and RELRO.
- - The GitHub mirror has migrated to https://github.com/NetBSD/pkgsrc
-* Number of changes: 210 packages added, 43 packages removed, 1,780 package updates.
+- Number of binary packages available:
+  + **x86_64**: 16,500+
+  + **i386**: 16,500+
+  + **multiarch**: 14,500+
+
+- New packages introduced (not all available as binary packages) include:
+  + Firefox 54
+  + GCC 7.1
+  + MATE 1.18
+  + Ruby 2.4
+  + Ruby on Rails 4.2
+  + TeX Live 2017
+  + Thunderbird 52.1
+  + Xen 4.8
+
+- Package removals include:
+  + Ruby 1.8
+  + Ruby 2.1
+
+- Infrastructure changes:
+  + Implement optional new pkgtasks and init infrastructure for
+    pkginstall.
+  + Various enhancements and fixes for building with ccache.
+  + Add support to USE\_LANGUAGES for newer C++ standards.
+  + Enhanced support for security features: SSP, FORTIFY, and RELRO.
+  + The GitHub mirror has migrated to https://github.com/NetBSD/pkgsrc
+
+- Commit stats since 2017Q1:
+  + 210 packages added
+  + 43 packages removed
+  + 1,780 package updates
+  + 4,198 commits from 74 contributors
+
+<a name="pkgsrc-2017Q1"/>
+
+## Changes in pkgsrc-2017Q1
+
+- Commit stats since 2016Q4:
+  + 192 packages added
+  + 25 packages removed
+  + 1,458 package updates
+  + 3,901 commits from 68 contributors
 
 <a name="pkgsrc-2016Q3"/>
 
-## Major changes in pkgsrc-2016Q3
+## Changes in pkgsrc-2016Q3
 
 * The `pkg_install` tools now support HTTPS, and both `pkgin` and `pkg_add` now
   fetch packages over HTTPS by default.
@@ -92,7 +113,7 @@ be available in the binary package repositories.
 
 <a name="pkgsrc-2016Q2"/>
 
-## Major changes in pkgsrc-2016Q2
+## Changes in pkgsrc-2016Q2
 
 * The 'tools' package set has the beginnings of
   [RFD 42](https://github.com/joyent/rfd/tree/master/rfd/0042) support, allowing
@@ -106,7 +127,7 @@ be available in the binary package repositories.
 
 <a name="pkgsrc-2016Q1"/>
 
-## Major changes in pkgsrc-2016Q1
+## Changes in pkgsrc-2016Q1
 
 * illumos packages are now built with -fstack-protector-strong to enable
   stack smashing protection for functions most at risk.
@@ -116,7 +137,7 @@ be available in the binary package repositories.
 
 <a name="pkgsrc-2015Q4"/>
 
-## Major changes in pkgsrc-2015Q4
+## Changes in pkgsrc-2015Q4
 
 * Major package additions include PHP 7.0 and Python 3.5.
 * The default illumos compiler is now GCC 4.9.3.
@@ -139,7 +160,7 @@ The main pkgsrc-2015Q4 announcement is [here](https://mail-index.netbsd.org/pkgs
 
 <a name="pkgsrc-2015Q3"/>
 
-## Major changes in pkgsrc-2015Q3
+## Changes in pkgsrc-2015Q3
 
 * Default package versions have been bumped for a number of core packages:
 * Lua 5.1 -> 5.2, PostgreSQL 9.3 -> 9.4, PHP 5.5 -> 5.6, Ruby 1.9.3 -> 2.0.0
@@ -155,7 +176,7 @@ The main pkgsrc-2015Q3 announcement is [here](https://mail-index.netbsd.org/pkgs
 
 <a name="pkgsrc-2015Q2"/>
 
-## Major changes in pkgsrc-2015Q2
+## Changes in pkgsrc-2015Q2
 
 * Packages and bootstrap kits are now available over HTTPS from
   <https://pkgsrc.joyent.com/>.
@@ -178,7 +199,7 @@ The main pkgsrc-2015Q2 announcement is [here](https://mail-index.netbsd.org/pkgs
 
 <a name="pkgsrc-2015Q1"/>
 
-## Major changes in pkgsrc-2015Q1
+## Changes in pkgsrc-2015Q1
 
 * OS X packages are now PGP signed and verified by default.
 * OS X bootstraps now include the pkgsrc-gnupg-keys package for signature
@@ -193,7 +214,7 @@ The main pkgsrc-2015Q1 announcement is [here](http://mail-index.netbsd.org/pkgsr
 
 <a name="pkgsrc-2014Q4"/>
 
-## Major changes in pkgsrc-2014Q4
+## Changes in pkgsrc-2014Q4
 
 * This release introduces Long Term Support, PGP signed packages, and some
   other enhancements to our illumos sets.  See [this blog
@@ -210,7 +231,7 @@ The main pkgsrc-2014Q4 announcement is [here](http://mail-index.netbsd.org/pkgsr
 
 <a name="pkgsrc-2014Q3"/>
 
-## Major changes in pkgsrc-2014Q3
+## Changes in pkgsrc-2014Q3
 
 * Bootstrap kits now include mozilla-rootcerts and pkg_alternatives installed
   and configured by default.
@@ -223,7 +244,7 @@ The main pkgsrc-2014Q3 announcement is [here](http://mail-index.netbsd.org/pkgsr
 
 <a name="pkgsrc-2014Q2"/>
 
-## Major changes in pkgsrc-2014Q2
+## Changes in pkgsrc-2014Q2
 
 * 244 packages have been added
 * 2 packages have been renamed
@@ -232,7 +253,7 @@ The main pkgsrc-2014Q3 announcement is [here](http://mail-index.netbsd.org/pkgsr
 
 <a name="pkgsrc-2014Q1"/>
 
-## Major changes in pkgsrc-2014Q1
+## Changes in pkgsrc-2014Q1
 
 Here are the major changes in the pkgsrc-2014Q1 release:
 
@@ -250,7 +271,7 @@ main 1.3 release can be great!
 
 <a name="pkgsrc-2013Q4"/>
 
-## Major changes in pkgsrc-2013Q4
+## Changes in pkgsrc-2013Q4
 
 Here are the major changes in the pkgsrc-2013Q4 release:
 
@@ -291,7 +312,7 @@ correctly.
 
 <a name="pkgsrc-2013Q3"/>
 
-## Major changes in pkgsrc-2013Q3
+## Changes in pkgsrc-2013Q3
 
 ### GHC 7.6 now available
 
@@ -304,7 +325,7 @@ for the newer releases.
 
 <a name="pkgsrc-2013Q2"/>
 
-## Major changes in pkgsrc-2013Q2
+## Changes in pkgsrc-2013Q2
 
 Here are the major changes in the pkgsrc-2013Q2 release:
 
@@ -400,7 +421,7 @@ $ vi .xinitrc
 
 <a name="pkgsrc-2013Q1"/>
 
-## Major changes in pkgsrc-2013Q1
+## Changes in pkgsrc-2013Q1
 
 Here are the major changes in the pkgsrc-2013Q1 release:
 
@@ -458,7 +479,7 @@ Yes, this means you can finally run `tcpdump` instead of `snoop`.
 
 <a name="pkgsrc-2012Q4"/>
 
-## Major changes in pkgsrc-2012Q4
+## Changes in pkgsrc-2012Q4
 
 ### Static UID/GID allocations
 
