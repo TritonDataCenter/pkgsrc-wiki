@@ -33,9 +33,9 @@ enabled in our binary packages.
 ## Changes in pkgsrc-2017Q2
 
 - Number of binary packages available:
-  + **x86_64**: 16,500+
-  + **i386**: 16,500+
-  + **multiarch**: 14,500+
+  + x86\_64: 16,500+
+  + i386: 16,500+
+  + multiarch: 14,500+
 
 - New packages introduced (not all available as binary packages) include:
   + Firefox 54
@@ -70,16 +70,16 @@ enabled in our binary packages.
 ## Changes in pkgsrc-2017Q1
 
 - Number of binary packages available:
-  + **x86_64**: 16,000+
-  + **i386**: 16,000+
-  + **multiarch**: 14,000+
+  + x86\_64: 16,000+
+  + i386: 16,000+
+  + multiarch: 14,000+
 
 - New packages introduced (not all available as binary packages) include:
   + Python 3.6
   + Nextcloud 11
   + Firefox 45.8.0 and 52.0.1
   + Gradle 3.4
-  + pkg_comp 2.0
+  + pkg\_comp 2.0
   + qmail 1.03nb24 binary packages work, supporting common use cases
   + Many additional Python, Perl and Ruby modules
   + Many additional TeX packages
@@ -107,9 +107,9 @@ enabled in our binary packages.
 New LTS branch, supported until the release of pkgsrc-2019Q4.
 
 - Number of binary packages available:
-  + **x86_64**: 15,000+
-  + **i386**: 15,000+
-  + **multiarch**: 14,000+
+  + x86\_64: 15,000+
+  + i386: 15,000+
+  + multiarch: 14,000+
 
 - New packages introduced (not all available as binary packages) include:
   + Tryton 4.2.0
@@ -133,38 +133,51 @@ New LTS branch, supported until the release of pkgsrc-2019Q4.
 
 ## Changes in pkgsrc-2016Q3
 
-* The `pkg_install` tools now support HTTPS, and both `pkgin` and `pkg_add` now
-  fetch packages over HTTPS by default.
-* Dovecot plugins are now separate packages instead of compile-time
-  options, providing more flexibility for binary package users.
-* The new `GFORTRAN_VERSION` variable allows the user to select which GCC
-  package will supply the GNU Fortran implementation when `PKGSRC_FORTRAN`
-  is set to "gfortran".  The default remains "48" (lang/gcc48).
-* Guile 2.0 is now the default, 1.8 is retained.
-* PHP modules are now automatically enabled at install time with
-  per-module `.ini` files placed into the `PKG_SYSCONFDIR/php.d` directory.
-* `PKGSRC_KEEP_BIN_PKGS` is now set to "yes" by default, meaning that
-  "make install" will now save/overwrite binary packages to `PACKAGES`.
-  Users who prefer to retain a distinction between "make install" and
-  "make package", for example to avoid overwriting known-good binary
-  packages during testing, should set this back to "no" in mk.conf.
-* `pkg_tarup` is no longer used for "make replace" in `DESTDIR` mode.
-* `RUBY_VERSION_SUPPORTED` is renamed `_RUBY_VERSIONS_ACCEPTED` to match
-  other multi-version support, and `*_VERSIONS_INCOMPATIBLE` support is
-  added to ruby and php.
-* New package additions include:
- - Emacs 25.1
- - Firefox 49.0
- - GCC 6.2.0
- - Go 1.7.1
- - KDE Frameworks 5.25.0
- - MySQL 5.7.15
- - PHP 7.1.0rc2
- - Rust 1.11
- - Many more TexLive 2016 packages
-* Package removals include:
- - Python 3.3
- - PHP 5.5
+- Number of binary packages available:
+  + x86\_64: 15,000+
+  + i386: 15,000+
+  + multiarch: 13,500+
+
+- New packages introduced (not all available as binary packages) include:
+  + Emacs 25.1
+  + Firefox 49.0
+  + GCC 6.2.0
+  + Go 1.7.1
+  + KDE Frameworks 5.25.0
+  + MySQL 5.7.15
+  + PHP 7.1.0rc2
+  + Rust 1.11
+  + Many more TexLive 2016 packages
+
+- Package removals include:
+  + Python 3.3
+  + PHP 5.5
+
+- Infrastructure changes:
+  + The pkg\_install tools now support HTTPS, and both pkgin and pkg\_add now
+    fetch packages over HTTPS by default.
+  + Dovecot plugins are now separate packages instead of compile-time
+    options, providing more flexibility for binary package users.
+  + The new GFORTRAN\_VERSION variable allows the user to select which GCC
+    package will supply the GNU Fortran implementation when PKGSRC\_FORTRAN
+    is set to `gfortran`.  The default remains `48` (lang/gcc48).
+  + Guile 2.0 is now the default, 1.8 is retained.
+  + PHP modules are now automatically enabled at install time with
+    per-module .ini files placed into the `PKG_SYSCONFDIR/php.d` directory.
+  + PKGSRC\_KEEP\_BIN\_PKGS is now set to `yes` by default, meaning that
+    "make install" will now save/overwrite binary packages to PACKAGES.
+    Users who prefer to retain a distinction between "make install" and
+    "make package", for example to avoid overwriting known-good binary
+    packages during testing, should set this back to "no" in mk.conf.
+  + pkg\_tarup is no longer used for `make replace` in DESTDIR mode.
+  + RUBY\_VERSION\_SUPPORTED is renamed \_RUBY\_VERSIONS\_ACCEPTED to match
+    other multi-version support, and \*\_VERSIONS\_INCOMPATIBLE support is
+    added to ruby and php.
+
+- Commit stats since 2016Q2:
+  + 276 packages added
+  + 1,520 package updates
+  + 4,016 commits from 64 contributors
 
 <a name="pkgsrc-2016Q2"/>
 
