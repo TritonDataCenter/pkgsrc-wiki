@@ -37,7 +37,7 @@ enabled in our binary packages.
   + i386: 16,500+
   + multiarch: 14,500+
 
-- New packages introduced (not all available as binary packages) include:
+- New packages introduced (not all necessarily available as binary packages) include:
   + Firefox 54
   + GCC 7.1
   + MATE 1.18
@@ -74,7 +74,7 @@ enabled in our binary packages.
   + i386: 16,000+
   + multiarch: 14,000+
 
-- New packages introduced (not all available as binary packages) include:
+- New packages introduced (not all necessarily available as binary packages) include:
   + Python 3.6
   + Nextcloud 11
   + Firefox 45.8.0 and 52.0.1
@@ -82,7 +82,7 @@ enabled in our binary packages.
   + pkg\_comp 2.0
   + qmail 1.03nb24 binary packages work, supporting common use cases
   + Many additional Python, Perl and Ruby modules
-  + Many additional TeX packages
+  + Many additional TeX Live 2016 packages
 
 - Package removals include:
   + GCC 4.5, 4.6, and 4.7
@@ -111,7 +111,7 @@ New LTS branch, supported until the release of pkgsrc-2019Q4.
   + i386: 15,000+
   + multiarch: 14,000+
 
-- New packages introduced (not all available as binary packages) include:
+- New packages introduced (not all necessarily available as binary packages) include:
   + Tryton 4.2.0
   + Firefox 50.1.0
   + Go 1.7.4
@@ -138,7 +138,7 @@ New LTS branch, supported until the release of pkgsrc-2019Q4.
   + i386: 15,000+
   + multiarch: 13,500+
 
-- New packages introduced (not all available as binary packages) include:
+- New packages introduced (not all necessarily available as binary packages) include:
   + Emacs 25.1
   + Firefox 49.0
   + GCC 6.2.0
@@ -147,7 +147,7 @@ New LTS branch, supported until the release of pkgsrc-2019Q4.
   + MySQL 5.7.15
   + PHP 7.1.0rc2
   + Rust 1.11
-  + Many more TexLive 2016 packages
+  + Many more TeX Live 2016 packages
 
 - Package removals include:
   + Python 3.3
@@ -165,10 +165,10 @@ New LTS branch, supported until the release of pkgsrc-2019Q4.
   + PHP modules are now automatically enabled at install time with
     per-module .ini files placed into the `PKG_SYSCONFDIR/php.d` directory.
   + PKGSRC\_KEEP\_BIN\_PKGS is now set to `yes` by default, meaning that
-    "make install" will now save/overwrite binary packages to PACKAGES.
-    Users who prefer to retain a distinction between "make install" and
-    "make package", for example to avoid overwriting known-good binary
-    packages during testing, should set this back to "no" in mk.conf.
+    `make install` will now save/overwrite binary packages to PACKAGES.
+    Users who prefer to retain a distinction between `make install` and
+    `make package`, for example to avoid overwriting known-good binary
+    packages during testing, should set this back to `no` in mk.conf.
   + pkg\_tarup is no longer used for `make replace` in DESTDIR mode.
   + RUBY\_VERSION\_SUPPORTED is renamed \_RUBY\_VERSIONS\_ACCEPTED to match
     other multi-version support, and \*\_VERSIONS\_INCOMPATIBLE support is
@@ -183,87 +183,170 @@ New LTS branch, supported until the release of pkgsrc-2019Q4.
 
 ## Changes in pkgsrc-2016Q2
 
-* The 'tools' package set has the beginnings of
-  [RFD 42](https://github.com/joyent/rfd/tree/master/rfd/0042) support, allowing
-  packages to install without useradd failures in the SmartOS Global Zone.
-* The default OpenJDK has been switched back to OpenJDK 7 for 32-bit, due to
-  Oracle's deprecation of 32-bit support in OpenJDK 8.  64-bit will continue
-  to default to OpenJDK 8.
-* OCaml is now available for 32-bit.
-* A new postgresql-contrib package has been introduced which includes all of the
-  additional contrib PostgreSQL utilities.
+- Number of binary packages available:
+  + x86\_64: 15,000+
+  + i386: 15,000+
+  + multiarch: 12,500+
+
+- New packages introduced (not all necessarily available as binary packages) include:
+  + Ansible 2.1.0.0
+  + Ardour 4.7
+  + Code::Blocks 16.01
+  + CodeLite 9.1
+  + CoreCLR 1.0.0
+  + Firefox 45.1.0
+  + KDE Frameworks 5
+  + LXDE 1.0
+  + MATE 1.14.0
+  + PostgreSQL Contrib
+  + TeX Live 2016
+
+- Infrastructure changes:
+  + The tools package set has the beginnings of
+    [RFD 42](https://github.com/joyent/rfd/tree/master/rfd/0042) support,
+    allowing packages to install without useradd failures in the SmartOS Global
+    Zone.
+  + The default OpenJDK has been switched back to OpenJDK 7 for 32-bit, due to
+    Oracle's deprecation of 32-bit support in OpenJDK 8.  64-bit will continue
+    to default to OpenJDK 8.
+  + OCaml is now available for 32-bit.
+  + A new postgresql-contrib package has been introduced which includes all of
+    the additional contrib PostgreSQL utilities.
+
+- Commit stats since 2016Q1:
+  + 301 packages added
+  + 1,727 package updates
+  + 3,861 commits from 73 contributors
 
 <a name="pkgsrc-2016Q1"/>
 
 ## Changes in pkgsrc-2016Q1
 
-* illumos packages are now built with -fstack-protector-strong to enable
-  stack smashing protection for functions most at risk.
-* MANZ=yes has been enabled, ensuring manual pages are installed compressed.
-* A rust-1.8.0-dev package is available on illumos 64-bit for testing.
-* The MATE 1.14.0 desktop environment has been included from pkgsrc-wip.
+The 50th quarterly pkgsrc branch!
+
+- Number of binary packages available:
+  + x86\_64: 15,000+
+  + i386: 15,000+
+  + multiarch: 13,000+
+
+- New packages introduced (not all necessarily available as binary packages) include:
+  + LLDB 3.8
+  + MATE 1.14.0 (included from pkgsrc-wip)
+  + PostgreSQL 9.5
+  + Rust 1.8.0-dev for testing
+
+- Infrastructure changes:
+  + illumos packages are now built with -fstack-protector-strong to enable
+    stack smashing protection for functions most at risk.
+  + `MANZ=yes` has been enabled, ensuring manual pages are installed compressed.
+
+- Commit stats since 2015Q4:
+  + 204 packages added
+  + 15 packages removed
+  + 1,477 package updates
+  + 4,477 commits from 75 contributors
 
 <a name="pkgsrc-2015Q4"/>
 
 ## Changes in pkgsrc-2015Q4
 
-* Major package additions include PHP 7.0 and Python 3.5.
-* The default illumos compiler is now GCC 4.9.3.
-* illumos packages are now built with "-gdwarf-2" to ensure debugging
-  information is available, and the core set of bootstrap packages are no
-  longer stripped.
-* clang-3.7.0 is provided as an optional compiler for illumos, and has been
-  patched to build [over
-  12,000](https://mail-index.netbsd.org/pkgsrc-bulk/2015/10/27/msg012139.html)
-  packages successfully.
-* The proftpd package has been split up into separate packages, allowing users
-  to simply choose which backends to install instead of using compiled-in
-  defaults.
-* 172 packages have been added
-* 1 package has been renamed
-* 58 packages removed, 7 with a successor
-* 1185 packages updated
+New LTS branch, supported until the release of pkgsrc-2018Q4.
 
-The main pkgsrc-2015Q4 announcement is [here](https://mail-index.netbsd.org/pkgsrc-users/2016/01/01/msg022780.html).
+- Number of binary packages available:
+  + x86\_64: 16,000+
+  + i386: 15,000+
+  + multiarch: 14,000+
+
+- New packages introduced (not all necessarily available as binary packages) include:
+  + PHP 7.0
+  + Python 3.5
+
+- Infrastructure changes:
+  + The default illumos compiler is now GCC 4.9.3.
+  + illumos packages are now built with "-gdwarf-2" to ensure debugging
+    information is available, and the core set of bootstrap packages are no
+    longer stripped.
+  + clang-3.7.0 is provided as an optional compiler for illumos, and has been
+    patched to build [over
+    12,000](https://mail-index.netbsd.org/pkgsrc-bulk/2015/10/27/msg012139.html)
+    packages successfully.
+  + The proftpd package has been split up into separate packages, allowing users
+    to simply choose which backends to install instead of using compiled-in
+    defaults.
+
+- Commit stats since 2015Q3:
+  + 172 packages added
+  + 58 packages removed, 7 with a successor
+  + 1,185 packages updated
+  + 3,418 commits from 73 contributors
 
 <a name="pkgsrc-2015Q3"/>
 
 ## Changes in pkgsrc-2015Q3
 
-* Default package versions have been bumped for a number of core packages:
-* Lua 5.1 -> 5.2, PostgreSQL 9.3 -> 9.4, PHP 5.5 -> 5.6, Ruby 1.9.3 -> 2.0.0
-* All platforms now contain the pkgin enhancements detailed in [this blog
-  post](http://www.perkin.org.uk/posts/reducing-ram-usage-in-pkgin.html).
-* OSX users no longer show up in the login window.
-* 225 packages have been added
-* 1 package has been renamed
-* 27 packages removed, 8 with a successor
-* 1392 packages updated
+- Number of binary packages available:
+  + x86\_64: 14,500+
+  + i386: 14,500+
+  + multiarch: 13,500+
 
-The main pkgsrc-2015Q3 announcement is [here](https://mail-index.netbsd.org/pkgsrc-users/2015/09/30/msg022310.html).
+- New packages introduced (not all necessarily available as binary packages) include:
+  + GCC 5.1
+  + Various additional Xorg 1.17 packages
+  + TeX Live 2015 additions and updates
+
+- Infrastructure changes:
+  + Default package versions have been bumped for a number of core packages:
+    + Lua 5.1 -> 5.2
+    + PostgreSQL 9.3 -> 9.4
+    + PHP 5.5 -> 5.6
+    + Ruby 1.9.3 -> 2.0.0
+  + The postfix package has been split up into separate packages, allowing users
+    to simply choose which backends to install instead of using compiled-in
+    defaults.
+  + All platforms now contain the pkgin enhancements detailed in [this blog
+    post](http://www.perkin.org.uk/posts/reducing-ram-usage-in-pkgin.html).
+  + OSX users no longer show up in the login window.
+
+- Commit stats since 2015Q2:
+  + 225 packages added
+  + 27 packages removed, 8 with a successor
+  + 1,392 packages updated
+  + 3,696 commits from 71 contributors
 
 <a name="pkgsrc-2015Q2"/>
 
 ## Changes in pkgsrc-2015Q2
 
-* Packages and bootstrap kits are now available over HTTPS from
-  <https://pkgsrc.joyent.com/>.
-* Major package additions/upgrades include MariaDB 5.5, Emacs 24.5, Boost
-  1.58.0, XFCE 4.12, TeX Live 2015, and Perl 5.22.
-* pkgin on illumos has significantly reduced memory requirements (for more
-  information see [this blog
-  post](http://www.perkin.org.uk/posts/reducing-ram-usage-in-pkgin.html)).
-* OSX packages are now installed under the `/opt/pkg` prefix instead of the
-  previous `/usr/pkg` in order to be compatible with the "System Integrity
-  Protection" feature introduced in El Capitan / 10.11.
-* OSX package defaults have been changed in order to provide fully-featured
-  packages out of the box.
-* 1,155 packages have been added.
-* 4 packages have been renamed, 3 moved.
-* 27 packages removed, 12 with a successor.
-* 2,015 packages updated.
+- Number of binary packages available:
+  + x86\_64: 14,500+
+  + i386: 14,500+
+  + multiarch: 13,500+
 
-The main pkgsrc-2015Q2 announcement is [here](https://mail-index.netbsd.org/pkgsrc-users/2015/07/06/msg021778.html).
+- New packages introduced (not all necessarily available as binary packages) include:
+  + Boost 1.58.0
+  + Emacs 24.5
+  + MariaDB 5.5
+  + Perl 5.22
+  + TeX Live 2015
+  + XFCE 4.12
+
+- Infrastructure changes:
+  + Packages and bootstrap kits are now available over HTTPS from
+    <https://pkgsrc.joyent.com/>.
+  + pkgin on illumos has significantly reduced memory requirements (for more
+    information see [this blog
+    post](http://www.perkin.org.uk/posts/reducing-ram-usage-in-pkgin.html)).
+  + OSX packages are now installed under the `/opt/pkg` prefix instead of the
+    previous `/usr/pkg` in order to be compatible with the "System Integrity
+    Protection" feature introduced in El Capitan / 10.11.
+  + OSX package defaults have been changed in order to provide fully-featured
+    packages out of the box.
+
+- Commit stats since 2015Q2:
+  + 1,155 packages have been added.
+  + 27 packages removed, 12 with a successor.
+  + 2,015 packages updated.
+  + 4,135 commits from 68 contributors
 
 <a name="pkgsrc-2015Q1"/>
 
