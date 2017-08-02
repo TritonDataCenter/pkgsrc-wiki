@@ -57,7 +57,9 @@ enabled in our binary packages.
   + Various enhancements and fixes for building with ccache.
   + Add support to USE\_LANGUAGES for newer C++ standards.
   + Enhanced support for security features: SSP, FORTIFY, and RELRO.
-  + The GitHub mirror has migrated to https://github.com/NetBSD/pkgsrc
+  + The official GitHub mirror of pkgsrc CVS has been migrated to
+    https://github.com/NetBSD/pkgsrc, as a result the Joyent fork
+    at https://github.com/joyent/pkgsrc has had to be reinitialised.
 
 - Commit stats since 2017Q1:
   + 210 packages added
