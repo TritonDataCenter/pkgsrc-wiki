@@ -148,7 +148,8 @@ Add to `pkgbuild.conf.local` for your target build (e.g.
 `/data/pkgbuild/conf/2017Q1-x86_64/pkgbuild.conf.local`):
 
 ```bash
-PKGSRC_GPG_SIGN_AS=F527BD41
+# Was previously named PKGSRC_GPG_SIGN_AS, use that if using an older pkgbuild.
+PKGBUILD_GPG_SIGN_AS=F527BD41
 ```
 
 <a name="test-package-signing"/>

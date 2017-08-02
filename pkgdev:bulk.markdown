@@ -191,7 +191,7 @@ rsync failures.
 This file allows you to override any variables from the main `pkgbuild.conf`
 file.  You will probably want to set `FAILURE_RECIPIENTS` so that you get
 notification when the pbulk scan fails, and you may also want to set
-`PKGSRC_GPG_SIGN_AS` if signing your own packages.
+`PKGBUILD_GPG_SIGN_AS` if signing your own packages.
 
 ```console
 $ vi pkgbuild.conf.local
@@ -199,7 +199,7 @@ $ vi pkgbuild.conf.local
 
 ```bash
 FAILURE_RECIPIENTS=pkgsrc@example.com
-PKGSRC_GPG_SIGN_AS=DEADBEEF
+PKGBUILD_GPG_SIGN_AS=DEADBEEF
 ```
 
 <a name="configure-pbulk-mk-conf-local"/>
