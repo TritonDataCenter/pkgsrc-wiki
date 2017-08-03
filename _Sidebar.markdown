@@ -7,6 +7,9 @@ About
 * [Releases / Versioning](/joyent/pkgsrc/wiki/about:releases)
 * [Quarterly Release Changes](/joyent/pkgsrc/wiki/about:changes)
 
+Usage Guides
+* [DNS / DHCP](/joyent/pkgsrc/wiki/use:dns-dhcp)
+
 Package Development
 * [Setup](/joyent/pkgsrc/wiki/pkgdev:setup)
 * [Building Packages](/joyent/pkgsrc/wiki/pkgdev:building)
