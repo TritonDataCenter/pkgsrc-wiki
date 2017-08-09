@@ -6,6 +6,8 @@
   1. <a href="#pkgsrc-joyent">pkgsrc-joyent</a>
   1. <a href="#pkgsrc-wip">pkgsrc-wip</a>
 1. <a href="#repository-flows">Repository Flows</a>
+1. <a href="#faq">FAQ</a>
+  1. <a href="#faq-pkgpath">How do I know where a package came from?</a>
 
 <a name="introduction"/>
 
@@ -28,8 +30,8 @@ upstream repositories:
 ### pkgsrc
 
 This is the primary repository, located at <https://github.com/joyent/pkgsrc/>,
-and containing the majority of packages.  It is a downstream fork of the
-official pkgsrc repository.
+and contains the majority of packages.  It is a downstream fork of the official
+pkgsrc repository.
 
 <a name="pkgsrc-joyent"/>
 
@@ -96,3 +98,25 @@ repositories.
 1. Regular fossil-based full conversion from CVS to Git exported to GitHub
 2. Forked repository regularly updated from upstream
 3. Loose fork, updates from wip are merged into joyent/pkgsrc-wip manually
+
+<a name="faq"/>
+
+## FAQ
+
+<a name="faq-pkgpath"/>
+
+### How do I know where a package came from?
+
+You can use `pkg\_info` to show where a package came from, and thus which
+repository to log any issues or pull requests against.  For example:
+
+```console
+$ pkg_info -Q PKGPATH runit rust zoneinit
+wip/runit
+lang/rust
+joyent/zoneinit
+```
+
+If it starts with `joyent/` then <a href="#pkgsrc-joyent">pkgsrc-joyent</a>, if
+`wip/` then <a href="#pkgsrc-wip">pkgsrc-wip</a>, otherwise <a
+href="#pkgsrc">pkgsrc</a>
