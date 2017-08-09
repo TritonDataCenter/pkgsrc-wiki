@@ -5,6 +5,7 @@
 
 About
 * [Releases / Versioning](/joyent/pkgsrc/wiki/about:releases)
+* [Git Workflow](/joyent/pkgsrc/wiki/about:workflow)
 * [Quarterly Release Changes](/joyent/pkgsrc/wiki/about:changes)
 
 Usage Guides
