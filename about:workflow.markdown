@@ -7,7 +7,7 @@
     1. <a href="#pkgsrc-wip">pkgsrc-wip</a>
 1. <a href="#repository-flows">Repository Flows</a>
 1. <a href="#faq">FAQ</a>
-    1. <a href="#faq-pkgpath">How do I know where a package came from?</a>
+    1. <a href="#faq-pkgpath">Find which repository a package came from</a>
 
 <a name="introduction"/>
 
@@ -105,7 +105,7 @@ repositories.
 
 <a name="faq-pkgpath"/>
 
-### How do I know where a package came from?
+### Find which repository a package came from
 
 You can use `pkg_info` to show where a package came from, and thus which
 repository to log any issues or pull requests against.  For example:
