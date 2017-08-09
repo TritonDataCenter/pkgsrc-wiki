@@ -17,27 +17,29 @@ pull requests should go.
 ## Repositories
 
 ```
-┌────────────────────────────────────┬───────────────────────────────────────┬────────────────────────────────┐
-│                                    │                                       │                                │
-│        The NetBSD Foundation       │                 Joyent                │     The pkgsrc-wip project     │
-│        =====================       │                 ======                │     ======================     │
-│                                    │                                       │                                │
-│      Commit directly to pkgsrc     │    Commit directly to pkgsrc-joyent   │  Commit directly to pkgsrc-wip │
-│                                    │ Commits to pkgsrc and pkgsrc-wip must │                                │
-│       Requires being a pkgsrc      │  only be on joyent-specific branches  │     Available to anyone who    │
-│     developer and member of TNF    │                                       │       requests an account      │
-│        (sponsorship process)       │  Only available to Joyent employees   │                                │
-│                                    │                                       │                                │
-│ ┌────────────────────────────────┐ │  ┌─────────────────────────────────┐  │ ┌────────────────────────────┐ │
-│ │ cvs.netbsd.org:/cvsroot/pkgsrc │ │  │ github.com/joyent/pkgsrc-joyent │  │ │ wip.pkgsrc.org:/pkgsrc-wip │ │
-│ └───────────────┬────────────────┘ │  └─────────────────────────────────┘  │ └──────────────┬─────────────┘ │
-│                 │                  │    ┌──────────────────────────────┐   │                │               │
-│                [1]                 │    │ github.com/joyent/pkgsrc-wip │<───────[3]─────────┘               │
-│                 │                  │    └──────────────────────────────┘   │                                │
-│    ┌────────────v─────────────┐    │      ┌──────────────────────────┐     │                                │
-│    │ github.com/NetBSD/pkgsrc ├───[2]────>│ github.com/joyent/pkgsrc │     │                                │
-│    └──────────────────────────┘    │      └──────────────────────────┘     │                                │
-└────────────────────────────────────┴───────────────────────────────────────┴────────────────────────────────┘
+┌────────────────────────────────────┬───────────────────────────────────────┐
+│                                    │                                       │
+│        The NetBSD Foundation       │                 Joyent                │
+│        =====================       │                 ======                │
+│                                    │                                       │
+│  Commit directly to pkgsrc and wip │    Commit directly to pkgsrc-joyent   │
+│                                    │ Commits to pkgsrc and pkgsrc-wip must │
+│ Access to pkgsrc is limited to TNF │  only be on joyent-specific branches  │
+│ members (sponsorship process), wip │                                       │
+│  is available to anyone (just ask) │  Only available to Joyent employees   │
+│                                    │                                       │
+│ ┌────────────────────────────────┐ │  ┌─────────────────────────────────┐  │
+│ │ cvs.netbsd.org:/cvsroot/pkgsrc │ │  │ github.com/joyent/pkgsrc-joyent │  │
+│ └───────────────┬────────────────┘ │  └─────────────────────────────────┘  │
+│                [1]                 │                                       │
+│    ┌────────────v─────────────┐    │     ┌──────────────────────────┐      │
+│    │ github.com/NetBSD/pkgsrc ├───[2]───>│ github.com/joyent/pkgsrc │      │
+│    └──────────────────────────┘    │     └──────────────────────────┘      │
+│                                    │                                       │
+│   ┌────────────────────────────┐   │    ┌──────────────────────────────┐   │
+│   │ wip.pkgsrc.org:/pkgsrc-wip ├──[3]──>│ github.com/joyent/pkgsrc-wip │   │
+│   └────────────────────────────┘   │    └──────────────────────────────┘   │
+└────────────────────────────────────┴───────────────────────────────────────┘
 ```
 
 1. Regular fossil-based full conversion from CVS to Git exported to GitHub
