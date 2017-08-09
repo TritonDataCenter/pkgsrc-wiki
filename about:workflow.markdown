@@ -107,7 +107,7 @@ repositories.
 
 ### How do I know where a package came from?
 
-You can use `pkg\_info` to show where a package came from, and thus which
+You can use `pkg_info` to show where a package came from, and thus which
 repository to log any issues or pull requests against.  For example:
 
 ```console
