@@ -2,12 +2,12 @@
 
 1. <a href="#introduction">Introduction</a>
 1. <a href="#repositories">Repositories</a>
-  1. <a href="#pkgsrc">pkgsrc</a>
-  1. <a href="#pkgsrc-joyent">pkgsrc-joyent</a>
-  1. <a href="#pkgsrc-wip">pkgsrc-wip</a>
+    1. <a href="#pkgsrc">pkgsrc</a>
+    1. <a href="#pkgsrc-joyent">pkgsrc-joyent</a>
+    1. <a href="#pkgsrc-wip">pkgsrc-wip</a>
 1. <a href="#repository-flows">Repository Flows</a>
 1. <a href="#faq">FAQ</a>
-  1. <a href="#faq-pkgpath">How do I know where a package came from?</a>
+    1. <a href="#faq-pkgpath">How do I know where a package came from?</a>
 
 <a name="introduction"/>
 
