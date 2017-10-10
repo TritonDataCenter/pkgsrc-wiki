@@ -58,6 +58,7 @@ enabled in our binary packages.
   + 247 packages added
   + 74 packages removed
   + 1,617 package updates (to 1,224 unique packages)
+  + 4,356 commits from 69 contributors
 
 <a name="pkgsrc-2017Q2"/>
 
