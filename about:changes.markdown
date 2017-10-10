@@ -1,6 +1,7 @@
 ## Contents
 
 1. <a href="#introduction">Introduction</a>
+1. <a href="#pkgsrc-2017Q3">Changes in pkgsrc-2017Q3</a>
 1. <a href="#pkgsrc-2017Q2">Changes in pkgsrc-2017Q2</a>
 1. <a href="#pkgsrc-2017Q1">Changes in pkgsrc-2017Q1</a>
 1. <a href="#pkgsrc-2016Q4">Changes in pkgsrc-2016Q4</a>
@@ -27,6 +28,36 @@ try to summarise the most important changes in each quarterly release.
 While this page is primarily for the illumos quarterly package sets, the
 changes listed may be generic to pkgsrc and may not be available on illumos or
 enabled in our binary packages.
+
+<a name="pkgsrc-2017Q3"/>
+
+## Changes in pkgsrc-2017Q3
+
+- Number of binary packages available:
+  + x86\_64: 17,000+
+  + i386: 17,000+
+  + multiarch: 14,500+
+
+- New packages introduced (not all necessarily available as binary packages) include:
+  + 723 updates combined to packages for perl, python, and ruby
+  + 47 new go packages
+  + ocaml 4.05.0 and supporting packages
+  + Firefox 55
+  + gdb 8.0.1
+  + qemu 2.10.0
+
+- Package removals include:
+  + teTex 3 (in favor of texlive)
+
+- Infrastructure changes:
+  + Additional SSP checks for consistent stack smashing protection support
+  + New security features: PKGSRC\_USE\_STACK\_CHECK and PKGSRC\_MKPIE support
+    for cwrappers.
+
+- Commit stats since 2017Q2:
+  + 247 packages added
+  + 74 packages removed
+  + 1,617 package updates (to 1,224 unique packages)
 
 <a name="pkgsrc-2017Q2"/>
 
