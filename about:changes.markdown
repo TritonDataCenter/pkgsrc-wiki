@@ -83,7 +83,8 @@ marks the end of support for the 2014Q4 branch and 14.4.x images.
   + i386: 17,000+
   + multiarch: 14,500+
 
-- New packages introduced (not all necessarily available as binary packages) include:
+- New packages introduced (not all necessarily available as binary packages)
+  include:
   + 723 updates combined to packages for perl, python, and ruby
   + 47 new go packages
   + ocaml 4.05.0 and supporting packages
@@ -114,7 +115,8 @@ marks the end of support for the 2014Q4 branch and 14.4.x images.
   + i386: 16,500+
   + multiarch: 14,500+
 
-- New packages introduced (not all necessarily available as binary packages) include:
+- New packages introduced (not all necessarily available as binary packages)
+  include:
   + Firefox 54
   + GCC 7.1
   + MATE 1.18
@@ -153,7 +155,8 @@ marks the end of support for the 2014Q4 branch and 14.4.x images.
   + i386: 16,000+
   + multiarch: 14,000+
 
-- New packages introduced (not all necessarily available as binary packages) include:
+- New packages introduced (not all necessarily available as binary packages)
+  include:
   + Python 3.6
   + Nextcloud 11
   + Firefox 45.8.0 and 52.0.1
@@ -190,7 +193,8 @@ New LTS branch, supported until the release of pkgsrc-2019Q4.
   + i386: 15,000+
   + multiarch: 14,000+
 
-- New packages introduced (not all necessarily available as binary packages) include:
+- New packages introduced (not all necessarily available as binary packages)
+  include:
   + Tryton 4.2.0
   + Firefox 50.1.0
   + Go 1.7.4
@@ -217,7 +221,8 @@ New LTS branch, supported until the release of pkgsrc-2019Q4.
   + i386: 15,000+
   + multiarch: 13,500+
 
-- New packages introduced (not all necessarily available as binary packages) include:
+- New packages introduced (not all necessarily available as binary packages)
+  include:
   + Emacs 25.1
   + Firefox 49.0
   + GCC 6.2.0
@@ -267,7 +272,8 @@ New LTS branch, supported until the release of pkgsrc-2019Q4.
   + i386: 15,000+
   + multiarch: 12,500+
 
-- New packages introduced (not all necessarily available as binary packages) include:
+- New packages introduced (not all necessarily available as binary packages)
+  include:
   + Ansible 2.1.0.0
   + Ardour 4.7
   + Code::Blocks 16.01
@@ -308,7 +314,8 @@ The 50th quarterly pkgsrc branch!
   + i386: 15,000+
   + multiarch: 13,000+
 
-- New packages introduced (not all necessarily available as binary packages) include:
+- New packages introduced (not all necessarily available as binary packages)
+  include:
   + LLDB 3.8
   + MATE 1.14.0 (included from pkgsrc-wip)
   + PostgreSQL 9.5
@@ -336,7 +343,8 @@ New LTS branch, supported until the release of pkgsrc-2018Q4.
   + i386: 15,000+
   + multiarch: 14,000+
 
-- New packages introduced (not all necessarily available as binary packages) include:
+- New packages introduced (not all necessarily available as binary packages)
+  include:
   + PHP 7.0
   + Python 3.5
 
@@ -368,7 +376,8 @@ New LTS branch, supported until the release of pkgsrc-2018Q4.
   + i386: 14,500+
   + multiarch: 13,500+
 
-- New packages introduced (not all necessarily available as binary packages) include:
+- New packages introduced (not all necessarily available as binary packages)
+  include:
   + GCC 5.1
   + Various additional Xorg 1.17 packages
   + TeX Live 2015 additions and updates
@@ -401,7 +410,8 @@ New LTS branch, supported until the release of pkgsrc-2018Q4.
   + i386: 14,500+
   + multiarch: 13,500+
 
-- New packages introduced (not all necessarily available as binary packages) include:
+- New packages introduced (not all necessarily available as binary packages)
+  include:
   + Boost 1.58.0
   + Emacs 24.5
   + MariaDB 5.5
@@ -440,7 +450,8 @@ New LTS branch, supported until the release of pkgsrc-2018Q4.
 * 46 packages removed, 11 with a successor
 * 2,007 packages updated
 
-The main pkgsrc-2015Q1 announcement is [here](http://mail-index.netbsd.org/pkgsrc-users/2015/04/14/msg021358.html).
+The main pkgsrc-2015Q1 announcement is
+[here](http://mail-index.netbsd.org/pkgsrc-users/2015/04/14/msg021358.html).
 
 <a name="pkgsrc-2014Q4"/>
 
@@ -463,14 +474,15 @@ The main pkgsrc-2014Q4 announcement is [here](http://mail-index.netbsd.org/pkgsr
 
 ## Changes in pkgsrc-2014Q3
 
-* Bootstrap kits now include mozilla-rootcerts and pkg_alternatives installed
+* Bootstrap kits now include mozilla-rootcerts and pkg\_alternatives installed
   and configured by default.
 * 210 packages have been added
 * 3 packages have been renamed
 * 15 packages removed, 12 with a successor
 * 1,123 packages updated
 
-The main pkgsrc-2014Q3 announcement is [here](http://mail-index.netbsd.org/pkgsrc-users/2014/10/03/msg020427.html).
+The main pkgsrc-2014Q3 announcement is
+[here](http://mail-index.netbsd.org/pkgsrc-users/2014/10/03/msg020427.html).
 
 <a name="pkgsrc-2014Q2"/>
 
@@ -496,7 +508,7 @@ the latest OpenSSL (1.0.1g) to fix this issue.
 
 Thanks to great work by [Aram Hăvărneanu](https://twitter.com/aramh) Go 1.3
 will support illumos systems, and we've included the 1.3beta1 package in our
-illumos x86_64 repository.  Please give it a spin and provide feedback so the
+illumos x86\_64 repository.  Please give it a spin and provide feedback so the
 main 1.3 release can be great!
 
 <a name="pkgsrc-2013Q4"/>
