@@ -63,10 +63,11 @@ marks the end of support for the 2014Q4 branch and 14.4.x images.
     <http://dtrace.org/blogs/rm/2013/11/14/userland-ctf-in-dtrace/> for more
     information.
   + The STRIP\_DEBUG infrastructure has been improved and enabled to ensure
-    that packages aren't bloated by the addition of debug data.  On the
-    contrary, thanks to the compact nature of CTF, and the explicit removal of
-    debugging symbols that are no longer required, the packages in 2017Q4 are
-    actually smaller than those from the 2017Q3 release.
+    that packages aren't bloated by the addition of debug data.  Packages that
+    have CTF enabled will see a small increase (usually around 3%) in size, but
+    those that don't (primarily those written in C++ or other languages not
+    supported by CTF) may see a significant reduction.  The net result is that
+    the sizes of the bootstrap kits and images have been reduced since 2017Q3.
 
 - Commit stats since 2017Q3:
   + 222 packages added
