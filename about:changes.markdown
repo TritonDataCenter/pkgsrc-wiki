@@ -1,6 +1,7 @@
 ## Contents
 
 1. <a href="#introduction">Introduction</a>
+1. <a href="#pkgsrc-2017Q4">Changes in pkgsrc-2017Q4</a>
 1. <a href="#pkgsrc-2017Q3">Changes in pkgsrc-2017Q3</a>
 1. <a href="#pkgsrc-2017Q2">Changes in pkgsrc-2017Q2</a>
 1. <a href="#pkgsrc-2017Q1">Changes in pkgsrc-2017Q1</a>
@@ -28,6 +29,50 @@ try to summarise the most important changes in each quarterly release.
 While this page is primarily for the illumos quarterly package sets, the
 changes listed may be generic to pkgsrc and may not be available on illumos or
 enabled in our binary packages.
+
+<a name="pkgsrc-2017Q4"/>
+
+## Changes in pkgsrc-2017Q4
+
+New LTS branch, supported until the release of pkgsrc-2020Q4.  This release
+marks the end of support for the 2014Q4 branch and 14.4.x images.
+
+- Number of binary packages available:
+  + x86\_64: 17,500+
+  + i386: 17,000+
+  + multiarch: 15,000+
+
+- New packages introduced (not all necessarily available as binary packages)
+  include:
+  + Many new perl, python, go and tex packages.
+  + PostgreSQL 10
+  + Rust 1.22.1
+  + PHP 7.2
+  + Firefox 57.0.2
+
+- Package removals include:
+  + Emacs 22, 23, and 24
+  + Firefox 10 through 38
+  + GDB 5 and 6
+  + KDE 3
+
+- Infrastructure changes:
+  + CTF is now enabled for all packages that support it.  For the x86\_64 set
+    this translates to 22,708 binaries across 5,625 packages.  CTF enables
+    improved debugging and DTrace support, see Robert Mustacci's blog post
+    <http://dtrace.org/blogs/rm/2013/11/14/userland-ctf-in-dtrace/> for more
+    information.
+  + The STRIP\_DEBUG infrastructure has been improved and enabled to ensure
+    that packages aren't bloated by the addition of debug data.  On the
+    contrary, thanks to the compact nature of CTF, and the explicit removal of
+    debugging symbols that are no longer required, the packages in 2017Q4 are
+    actually smaller than those from the 2017Q3 release.
+
+- Commit stats since 2017Q3:
+  + 222 packages added
+  + 225 packages removed
+  + 1,701 package updates (to 1,145 unique packages)
+  + 4,089 commits from 67 contributors
 
 <a name="pkgsrc-2017Q3"/>
 
