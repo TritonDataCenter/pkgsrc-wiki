@@ -35,7 +35,7 @@ enabled in our binary packages.
 ## Changes in pkgsrc-2017Q4
 
 New LTS branch, supported until the release of pkgsrc-2020Q4.  This release
-marks the end of support for the 2014Q4 branch and 14.4.x images.
+marks the end of support for pkgsrc-2014Q4 and SmartOS 14.4.x images.
 
 - Number of binary packages available:
   + x86\_64: 17,500+
