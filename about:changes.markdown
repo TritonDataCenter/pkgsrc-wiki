@@ -48,6 +48,7 @@ marks the end of support for pkgsrc-2014Q4 and SmartOS 14.4.x images.
   + PostgreSQL 10
   + Rust 1.22.1
   + PHP 7.2
+  + clang/llvm/lldb 5.0.0
   + Firefox 57.0.2
 
 - Package removals include:
