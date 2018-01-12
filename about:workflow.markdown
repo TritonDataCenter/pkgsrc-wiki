@@ -214,7 +214,7 @@ This is a combined merge of all of the feature branches, plus the addition of
 our pkgsrc-joyent and pkgsrc-wip submodules.  This is the branch that is used
 to build the release packages.
 
-│<a name="faq"/>
+<a name="faq"/>
 
 ## FAQ
 
