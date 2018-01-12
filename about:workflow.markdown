@@ -6,6 +6,15 @@
     1. <a href="#pkgsrc-joyent">pkgsrc-joyent</a>
     1. <a href="#pkgsrc-wip">pkgsrc-wip</a>
 1. <a href="#repository-flows">Repository Flows</a>
+1. <a href="#branches">Branches</a>
+    1. <a href="#pkgsrc-yyyyqq">pkgsrc-YYYYQQ</a>
+    1. <a href="#backports">backports</a>
+    1. <a href="#ctf">ctf</a>
+    1. <a href="#miscfix">miscfix</a>
+    1. <a href="#multiarch">multiarch</a>
+    1. <a href="#pbulk">pbulk</a>
+    1. <a href="#pbulkmulti">pbulkmulti</a>
+    1. <a href="#release">release</a>
 1. <a href="#faq">FAQ</a>
     1. <a href="#faq-pkgpath">Find which repository a package came from</a>
 
@@ -99,6 +108,8 @@ repositories.
 2. Forked repository regularly updated from upstream
 3. Loose fork, updates from wip are merged into joyent/pkgsrc-wip manually
 
+<a name="branches"/>
+
 ## Branches
 
 We have developed a number of patch sets that are not yet suitable for pushing
@@ -138,6 +149,8 @@ For our 2017Q4 release it looks something like this:
 
 The branches are as follows:
 
+<a name="pkgsrc-yyyyqq"/>
+
 ### pkgsrc-YYYYQQ
 
 The pristine branch from upstream.  This is managed by the
@@ -148,21 +161,29 @@ requested by developers.  This process is documented at
 We pull this branch as-is into our own pkgsrc-YYYYQQ branch, and that is then
 used as the basis for our feature branches documented below.
 
+<a name="backports"/>
+
 ### backports
 
 A branch where we perform our own pullups of changes from pkgsrc trunk that
 might not be suitable for general pkgsrc use, or are done after releng-pkgsrc
 have stopped maintaining their branch.
 
+<a name="ctf"/>
+
 ### ctf
 
 Our CTF work for pkgsrc-2017Q4 that enables CTF debugging support in supported
 packages.
 
+<a name="miscfix"/>
+
 ### miscfix
 
 A general dumping ground for changes that aren't big enough for their own
 branch.
+
+<a name="multiarch"/>
 
 ### multiarch
 
@@ -170,16 +191,22 @@ Our branch to add multiarch support to our packages, see
 <http://www.perkin.org.uk/posts/multiarch-package-support-in-smartos.html> for
 more details.
 
+<a name="pbulk"/>
+
 ### pbulk
 
 A set of changes to enhance pbulk, the software that we use to bulk build our
 package sets.
+
+<a name="pbulkmulti"/>
 
 ### pbulkmulti
 
 Changes to enable more multi-package builds, for example building p5-DBD-MySQL
 against every version of MySQL, MariaDB, and Percona that are supported in
 pkgsrc instead of just the default.
+
+<a name="release"/>
 
 ### release
 
