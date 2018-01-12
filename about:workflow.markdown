@@ -99,7 +99,95 @@ repositories.
 2. Forked repository regularly updated from upstream
 3. Loose fork, updates from wip are merged into joyent/pkgsrc-wip manually
 
-<a name="faq"/>
+## Branches
+
+We have developed a number of patch sets that are not yet suitable for pushing
+upstream to pkgsrc.  In order to keep track of them they are separated into
+feature branches and then merged together to form our release branch.
+
+For our 2017Q4 release it looks something like this:
+
+```
+┌──────────────────────────────────────┬───────────────────────────────────────┐
+│                                      │                                       │
+│         The NetBSD Foundation        │                 Joyent                │
+│         =====================        │                 ======                │
+│                                      │                                       │
+│     ┌──────────────────────────┐     │     ┌──────────────────────────┐      │
+│     │ github.com/NetBSD/pkgsrc │     │     │ github.com/joyent/pkgsrc │      │
+│     └────────────┬─────────────┘     │     └──────────────────────────┘      │
+│                  v                   │                                       │
+│     ┌──────────────────────────┐     │     ┌──────────────────────────┐      │
+│     │       pkgsrc-2017Q4      ├──────────>│      pkgsrc-2017Q4       │      │
+│     └──────────────────────────┘     │     └────────────┬─────────────┘      │
+│                                      │                  v                    │
+│                                      │ ┌──────────────────────────────────┐  │
+│                                      │ │ joyent/feature/backports/2017Q4  │  │
+│                                      │ │ joyent/feature/ctf/2017Q4        │  │
+│                                      │ │ joyent/feature/miscfix/2017Q4    │  │
+│                                      │ │ joyent/feature/multiarch/2017Q4  │  │
+│                                      │ │ joyent/feature/pbulk/2017Q4      │  │
+│                                      │ │ joyent/feature/pbulkmulti/2017Q4 │  │
+│                                      │ └────────────────┬─────────────────┘  │
+│                                      │                  v                    │
+│                                      │     ┌──────────────────────────┐      │
+│                                      │     │   joyent/release/2017Q4  │      │
+│                                      │     └──────────────────────────┘      │
+└──────────────────────────────────────┴───────────────────────────────────────┘
+```
+
+The branches are as follows:
+
+### pkgsrc-YYYYQQ
+
+The pristine branch from upstream.  This is managed by the
+<releng-pkgsrc@pkgsrc.org> team who backport changes from pkgsrc trunk as
+requested by developers.  This process is documented at
+<https://www.netbsd.org/developers/releng/pullups.html>
+
+We pull this branch as-is into our own pkgsrc-YYYYQQ branch, and that is then
+used as the basis for our feature branches documented below.
+
+### backports
+
+A branch where we perform our own pullups of changes from pkgsrc trunk that
+might not be suitable for general pkgsrc use, or are done after releng-pkgsrc
+have stopped maintaining their branch.
+
+### ctf
+
+Our CTF work for pkgsrc-2017Q4 that enables CTF debugging support in supported
+packages.
+
+### miscfix
+
+A general dumping ground for changes that aren't big enough for their own
+branch.
+
+### multiarch
+
+Our branch to add multiarch support to our packages, see
+<http://www.perkin.org.uk/posts/multiarch-package-support-in-smartos.html> for
+more details.
+
+### pbulk
+
+A set of changes to enhance pbulk, the software that we use to bulk build our
+package sets.
+
+### pbulkmulti
+
+Changes to enable more multi-package builds, for example building p5-DBD-MySQL
+against every version of MySQL, MariaDB, and Percona that are supported in
+pkgsrc instead of just the default.
+
+### release
+
+This is a combined merge of all of the feature branches, plus the addition of
+our pkgsrc-joyent and pkgsrc-wip submodules.  This is the branch that is used
+to build the release packages.
+
+│<a name="faq"/>
 
 ## FAQ
 
