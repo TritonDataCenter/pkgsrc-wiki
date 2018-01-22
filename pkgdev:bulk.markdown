@@ -3,7 +3,7 @@
 1. <a href="#introduction">Introduction</a>
 1. <a href="#host-setup">Host setup</a>
 1. <a href="#generate-ssh-key">Generate SSH key</a>
-1. <a href="#build-pbulk-tools">Build pbulk tools</a>
+1. <a href="#build-pbulk-tools">Build pbulk tools (OSX/Linux)</a>
 1. <a href="#install-manta-tools">Install Manta tools (optional)</a>
 1. <a href="#configure-pbulk">Configure pbulk</a>
   1. <a href="#configure-pbulk-pbulk-conf-local">pbulk.conf.local</a>
@@ -55,10 +55,12 @@ $ ssh 127.0.0.1 echo
 
 <a name="build-pbulk-tools"/>
 
-## Build pbulk tools
+## Build pbulk tools (OSX/Linux)
 
-The first set of packages we need to build are the pbulk tools, and any
-software required to perform the main bulk builds.
+This step is not required on SmartOS, skip to the next step.
+
+The first set of packages we need to build on OSX and Linux are the pbulk
+tools, and any software required to perform the main bulk builds.
 
 First checkout the `joyent/feature/pbulk/trunk` branch.  This contains some
 modifications to the pbulk code, for example to enable publishing to
@@ -112,7 +114,9 @@ Now we can switch to configuring our main bulk build.  Start by setting
 `PKGBUILD` to an appropriate configuration.
 
 ```console
-: Choose one of the options below based on your target OS.
+: Choose one of the options below based on your target OS.  For SmartOS
+: you may choose any of the supported branches and architectures.
+$ export PKGBUILD=2017Q4-x86_64         # SmartOS 2017Q4 64-bit
 $ export PKGBUILD=linux-trunk-i386      # Generic Linux 32-bit
 $ export PKGBUILD=linux-trunk-x86_64    # Generic Linux 64-bit
 $ export PKGBUILD=osx-trunk-i386        # Mac OS X 32-bit
@@ -229,6 +233,8 @@ First, switch over to the target branch.  This will likely be either one of the
 will be the latest pkgsrc trunk from upstream.
 
 ```console
+: If you are using a pkgbuild image then it will already be on the appropriate
+: branch and you may not need to do anything here.
 $ cd /data/pkgsrc
 
 : Build against a Joyent quarterly release..
