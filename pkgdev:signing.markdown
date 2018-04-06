@@ -21,9 +21,15 @@ to get you started.
 ## Setup
 
 In a pkgbuild zone, but not inside a sandbox, install GnuPG from pkgsrc, as the
-one provided by the platform is too old and incomplete.
+one provided by the platform is too old and incomplete.  Note that GnuPG broke
+compatibility between 2.0 and 2.2 so you need to specify the exact package
+depending on your pkgsrc release.
 
 ```console
+# If you are running 2017Q3 or newer
+$ pkgin -y install gnupg20
+
+# Otherwise for 2017Q2 and older
 $ pkgin -y install gnupg2
 ```
 
