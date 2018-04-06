@@ -111,6 +111,8 @@ Configure `/root/.gnupg/gpg.conf`:
 
 ```conf
 lock-never
+no-auto-check-trustdb
+no-random-seed-file
 no-tty
 keyserver hkp://keys.gnupg.net
 ```
