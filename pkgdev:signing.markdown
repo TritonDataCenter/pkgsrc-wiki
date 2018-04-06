@@ -144,14 +144,14 @@ this part and go straight to the <a href="#offline-signing">offline signing</a>
 section.
 
 Add to `mk.conf.local` for your target build (e.g.
-`/data/pkgbuild/conf/2017Q1-x86_64/mk.conf.local`):
+`/data/pkgbuild/conf/2017Q4-x86_64/mk.conf.local`):
 
 ```bash
 SIGN_PACKAGES=gpg
 ```
 
 Add to `pkgbuild.conf.local` for your target build (e.g.
-`/data/pkgbuild/conf/2017Q1-x86_64/pkgbuild.conf.local`):
+`/data/pkgbuild/conf/2017Q4-x86_64/pkgbuild.conf.local`):
 
 ```bash
 # Was previously named PKGSRC_GPG_SIGN_AS, use that if using an older pkgbuild.
@@ -167,7 +167,7 @@ Let's now check that everything works as expected.
 Start the sandbox:
 
 ```console
-$ run-sandbox 2017Q1-x86_64
+$ run-sandbox 2017Q4-x86_64
 ```
 
 Build a small package:
@@ -177,7 +177,7 @@ $ cd /data/pkgsrc/pkgtools/digest
 $ bmake package
 [...]
 ===> Building binary package for digest-20160304
-=> Creating binary package /data/packages/SmartOS/2017Q1/x86_64/All/digest-20160304.tgz
+=> Creating binary package /data/packages/SmartOS/2017Q4/x86_64/All/digest-20160304.tgz
 pkg_info: unable to verify signature: Signature key id 33495548f527bd41 not found
 *** Error code 1
 ```
@@ -199,7 +199,7 @@ Then try to install the package again.  This time it should complete
 successfully with no errors:
 
 ```console
-$ pkg_add /data/packages/SmartOS/2017Q1/x86_64/All/digest-20160304.tgz
+$ pkg_add /data/packages/SmartOS/2017Q4/x86_64/All/digest-20160304.tgz
 ```
 
 You will need to install this updated keyring onto any host that uses your
@@ -218,12 +218,12 @@ described above.
 Build the unsigned package in a sandbox then exit it.
 
 ```console
-$ run-sandbox 2017Q1-x86_64
+$ run-sandbox 2017Q4-x86_64
 $ cd /data/pkgsrc/pkgtools/digest
 $ bmake package
 [...]
 ===> Building binary package for digest-20160304
-=> Creating binary package /data/packages/SmartOS/2017Q1/x86_64/All/digest-20160304.tgz
+=> Creating binary package /data/packages/SmartOS/2017Q4/x86_64/All/digest-20160304.tgz
 $ exit
 ```
 
@@ -241,7 +241,7 @@ compressed tarball plus the signing files.
 
 ```console
 $ mkdir signed unsigned
-$ cp /data/packages/SmartOS/2017Q1/x86_64/All/digest-20160304.tgz unsigned
+$ cp /data/packages/SmartOS/2017Q4/x86_64/All/digest-20160304.tgz unsigned
 $ pkg_admin gpg-sign-package unsigned/digest-20160304.tgz signed/digest-20160304.tgz
 $ file unsigned/digest-20160304.tgz signed/digest-20160304.tgz
 unsigned/digest-20160304.tgz:	gzip compressed data - deflate method

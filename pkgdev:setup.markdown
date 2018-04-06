@@ -276,9 +276,9 @@ directories under `/data/pkgbuild/conf`.
 Some examples:
 
 ```console
-run-sandbox 2016Q4-x86_64       # Create a 64-bit SmartOS sandbox for 16.4.x
-run-sandbox 2016Q4-i386         # Create a 32-bit SmartOS sandbox for 16.4.x
-run-sandbox 2017Q1-tools        # Create a GZ "tools" SmartOS sandbox for 17.1.x
+run-sandbox 2017Q4-x86_64       # Create a 64-bit SmartOS sandbox for 17.4.x
+run-sandbox 2017Q4-i386         # Create a 32-bit SmartOS sandbox for 17.4.x
+run-sandbox 2018Q1-tools        # Create a GZ "tools" SmartOS sandbox for 18.1.x
 run-sandbox osx-trunk-x86_64    # Create a 64-bit OS X sandbox
 run-sandbox linux-trunk-i386    # Create a 32-bit Linux sandbox
 ```
