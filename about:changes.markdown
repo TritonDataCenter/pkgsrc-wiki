@@ -1,6 +1,7 @@
 ## Contents
 
 1. <a href="#introduction">Introduction</a>
+1. <a href="#pkgsrc-2018Q1">Changes in pkgsrc-2018Q1</a>
 1. <a href="#pkgsrc-2017Q4">Changes in pkgsrc-2017Q4</a>
 1. <a href="#pkgsrc-2017Q3">Changes in pkgsrc-2017Q3</a>
 1. <a href="#pkgsrc-2017Q2">Changes in pkgsrc-2017Q2</a>
@@ -29,6 +30,59 @@ try to summarise the most important changes in each quarterly release.
 While this page is primarily for the illumos quarterly package sets, the
 changes listed may be generic to pkgsrc and may not be available on illumos or
 enabled in our binary packages.
+
+<a name="pkgsrc-2018Q1"/>
+
+## Changes in pkgsrc-2018Q1
+
+- Number of binary packages available:
+  + x86\_64: 18,000+
+  + i386: 18,000+
+  + multiarch: 13,500+
+
+- Notable new packages and updates (not all necessarily available as binary
+  packages) include:
+  + Erlang 20.3
+  + Firefox 52.7.3, 59.0.2
+  + GCC 7.3.0
+  + Go 1.10.1
+  + Mutt 1.9.4
+  + MySQL 5.5.59, 5.6.39, 5.7.21
+  + NodeJS 6.13.1, 8.10.0, 9.8.0
+  + OpenJDK8 1.8.162
+  + PHP 5.6.35, 7.0.29, 7.1.16, 7.2.4
+  + Postfix 3.3.0
+  + PostgreSQL 9.3.22, 9.4.17, 9.5.12, 9.6.8, 10.3
+  + Python 3.4.8, 3.5.5, 3.6.5
+  + QT5 5.10.1
+  + Ruby 2.2.10, 2.3.7, 2.4.4, 2.5.1
+  + Ruby On Rails 4.2.10, 5.1.5
+  + Rust 1.24.1
+  + Xorgproto 2018.4
+
+- Package removals include:
+  + Apache 2.2 and related modules
+  + Various Xorg proto packages, unified by Xorgproto
+
+- Infrastructure changes:
+  + Many more packages honour RELRO flags (not currently enabled on
+    SmartOS/illumos).
+
+  + MySQL 5.7 is now the default implementation (this was already the case
+    for our SmartOS/illumos packages).
+
+  + TEST_DEPENDS has been introduced, along with :test support for
+    USE_TOOLS.
+
+  + USE_LANGUAGES now supports gnu++03 and c++03 to explicitly set the
+    standard and allow older packages to build with newer compilers.
+    Many packages have additionally been fixed to use these.
+
+- Commit stats since 2017Q4:
+  + 213 packages added
+  + 76 packages removed
+  + 1,979 package updates (to 1,355 unique packages)
+  + 4,955 commits from 69 contributors
 
 <a name="pkgsrc-2017Q4"/>
 
