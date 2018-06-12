@@ -449,7 +449,7 @@ New LTS branch, supported until the release of pkgsrc-2018Q4.
     defaults.
   + All platforms now contain the pkgin enhancements detailed in [this blog
     post](http://www.perkin.org.uk/posts/reducing-ram-usage-in-pkgin.html).
-  + OSX users no longer show up in the login window.
+  + macOS users no longer show up in the login window.
 
 - Commit stats since 2015Q2:
   + 225 packages added
@@ -481,10 +481,10 @@ New LTS branch, supported until the release of pkgsrc-2018Q4.
   + pkgin on illumos has significantly reduced memory requirements (for more
     information see [this blog
     post](http://www.perkin.org.uk/posts/reducing-ram-usage-in-pkgin.html)).
-  + OSX packages are now installed under the `/opt/pkg` prefix instead of the
+  + macOS packages are now installed under the `/opt/pkg` prefix instead of the
     previous `/usr/pkg` in order to be compatible with the "System Integrity
     Protection" feature introduced in El Capitan / 10.11.
-  + OSX package defaults have been changed in order to provide fully-featured
+  + macOS package defaults have been changed in order to provide fully-featured
     packages out of the box.
 
 - Commit stats since 2015Q2:
@@ -497,8 +497,8 @@ New LTS branch, supported until the release of pkgsrc-2018Q4.
 
 ## Changes in pkgsrc-2015Q1
 
-* OS X packages are now PGP signed and verified by default.
-* OS X bootstraps now include the pkgsrc-gnupg-keys package for signature
+* macOS packages are now PGP signed and verified by default.
+* macOS bootstraps now include the pkgsrc-gnupg-keys package for signature
   verification of the pkg-vulnerabilities file.
 * PostgreSQL 9.4 has been added, PHP 5.3 has been removed.
 * 216 packages have been added
@@ -517,7 +517,7 @@ The main pkgsrc-2015Q1 announcement is
   other enhancements to our illumos sets.  See [this blog
   post](http://www.perkin.org.uk/posts/pkgsrc-2014Q4-lts-signed-packages-and-more.html)
   for more details.
-* This release sees the first set of 64-bit OS X packages, built on OS X
+* This release sees the first set of 64-bit macOS packages, built on macOS
   Mavericks using clang, in addition to our existing 32-bit set.
 * 156 packages have been added
 * 4 packages have been renamed
@@ -730,7 +730,7 @@ driving reason to pursue this upgrade was to take advantage of AES-NI support
 which significantly improves crypto performance on Intel CPUs which provide
 that feature.
 
-On a OSX 10.7 Core i7 laptop the numbers below speak for themselves:
+On a macOS 10.7 Core i7 laptop the numbers below speak for themselves:
 
 ```console
 : /usr/bin/openssl 'OpenSSL 0.9.8r 8 Feb 2011'

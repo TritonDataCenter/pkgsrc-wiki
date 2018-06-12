@@ -3,7 +3,7 @@
 1. <a href="#introduction">Introduction</a>
 1. <a href="#host-setup">Host setup</a>
 1. <a href="#generate-ssh-key">Generate SSH key</a>
-1. <a href="#build-pbulk-tools">Build pbulk tools (OSX/Linux)</a>
+1. <a href="#build-pbulk-tools">Build pbulk tools (macOS/Linux)</a>
 1. <a href="#install-manta-tools">Install Manta tools (optional)</a>
 1. <a href="#configure-pbulk">Configure pbulk</a>
   1. <a href="#configure-pbulk-pbulk-conf-local">pbulk.conf.local</a>
@@ -55,11 +55,11 @@ $ ssh 127.0.0.1 echo
 
 <a name="build-pbulk-tools"/>
 
-## Build pbulk tools (OSX/Linux)
+## Build pbulk tools (macOS/Linux)
 
 This step is not required on SmartOS, skip to the next step.
 
-The first set of packages we need to build on OSX and Linux are the pbulk
+The first set of packages we need to build on macOS and Linux are the pbulk
 tools, and any software required to perform the main bulk builds.
 
 First checkout the `joyent/feature/pbulk/trunk` branch.  This contains some
@@ -78,8 +78,8 @@ in the environment.
 : Choose one of the options below based on your target OS.
 $ export PKGBUILD=linux-trunk-pbulk32   # Generic Linux 32-bit
 $ export PKGBUILD=linux-trunk-pbulk64   # Generic Linux 64-bit
-$ export PKGBUILD=osx-trunk-pbulk32     # Mac OS X 32-bit
-$ export PKGBUILD=osx-trunk-pbulk64     # Mac OS X 64-bit
+$ export PKGBUILD=osx-trunk-pbulk32     # macOS 32-bit
+$ export PKGBUILD=osx-trunk-pbulk64     # macOS 64-bit
 
 : Execute the tools build script
 $ /data/pkgbuild/scripts/run-jenkins-tools
@@ -119,8 +119,8 @@ Now we can switch to configuring our main bulk build.  Start by setting
 $ export PKGBUILD=2017Q4-x86_64         # SmartOS 2017Q4 64-bit
 $ export PKGBUILD=linux-trunk-i386      # Generic Linux 32-bit
 $ export PKGBUILD=linux-trunk-x86_64    # Generic Linux 64-bit
-$ export PKGBUILD=osx-trunk-i386        # Mac OS X 32-bit
-$ export PKGBUILD=osx-trunk-x86_64      # Mac OS X 64-bit
+$ export PKGBUILD=osx-trunk-i386        # macOS 32-bit
+$ export PKGBUILD=osx-trunk-x86_64      # macOS 64-bit
 ```
 
 Then edit the following files under that pkgbuild directory.

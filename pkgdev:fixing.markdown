@@ -10,8 +10,8 @@
 
 ## Introduction
 
-Currently pkgsrc is able to build over 16,000 packages on SmartOS and over
-15,000 packages on OS X, however pkgsrc carries over 18,000 packages in total,
+Currently pkgsrc is able to build over 18,000 packages on SmartOS and over
+17,000 packages on macOS, however pkgsrc carries over 21,000 packages in total,
 so there is a chance that you will come across a package which will not produce
 a binary package.
 

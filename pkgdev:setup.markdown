@@ -3,7 +3,7 @@
 1. <a href="#introduction">Introduction</a>
 1. <a href="#os-setup">OS setup</a>
     1. <a href="#os-setup-smartos">SmartOS</a>
-    1. <a href="#os-setup-osx">Mac OS X</a>
+    1. <a href="#os-setup-macos">macOS</a>
     1. <a href="#os-setup-ubuntu-linux">Ubuntu Linux</a>
     1. <a href="#os-setup-redhat-linux">RedHat Linux</a>
 1. <a href="#fetch-repositories">Fetch Repositories</a>
@@ -71,8 +71,9 @@ $ vmadm create -f pkgbuild.json
 ```
 
 <a name="os-setup-osx"/>
+<a name="os-setup-macos"/>
 
-### Mac OS X
+### macOS
 
 Create the pbulk user, used for unprivileged builds.  The easiest way to do
 this is via the System Preferences dialog, but if you wish to use the command
@@ -99,7 +100,7 @@ $ mkdir /Users/pbulk
 $ chown pbulk:staff /Users/pbulk
 ```
 
-Mac OS X can run into issues with case-insensitive file systems, so it is often
+macOS can run into issues with case-insensitive file systems, so it is often
 worth creating a separate file system image on which to store pkgsrc.
 
 ```console
@@ -108,7 +109,7 @@ $ sudo hdiutil attach -mountpoint /data data.sparseimage
 ```
 
 This directory will need to be NFS exported for the sandboxes to access it, as
-Mac OS X does not ship with any adequate null/bind mount options.
+macOS does not ship with any adequate null/bind mount options.
 
 ```console
 $ cat >/etc/exports <<EOF
@@ -222,7 +223,7 @@ you can use a different prefix if necessary.  This is however currently
 undocumented).
 
 ```console
-: For OSX/Linux
+: For macOS/Linux
 $ mkdir -p /data
 $ cd /data
 $ git clone https://github.com/joyent/pkgsrc.git
@@ -236,11 +237,11 @@ $ (cd /data/pkgsrc; git pull)
 Add the `pkgbuild/scripts` directory to your path.
 
 ```console
-: For OSX/Linux.  SmartOS 'pkgbuild' already has this by default.
+: For macOS/Linux.  SmartOS 'pkgbuild' already has this by default.
 $ PATH=$PATH:/data/pkgbuild/scripts
 ```
 
-For OS X you will want to track the `joyent/osx/trunk` branch, i.e.:
+For macOS you will want to track the `joyent/osx/trunk` branch, i.e.:
 
 ```console
 $ cd /data/pkgsrc
@@ -279,7 +280,7 @@ Some examples:
 run-sandbox 2017Q4-x86_64       # Create a 64-bit SmartOS sandbox for 17.4.x
 run-sandbox 2017Q4-i386         # Create a 32-bit SmartOS sandbox for 17.4.x
 run-sandbox 2018Q1-tools        # Create a GZ "tools" SmartOS sandbox for 18.1.x
-run-sandbox osx-trunk-x86_64    # Create a 64-bit OS X sandbox
+run-sandbox osx-trunk-x86_64    # Create a 64-bit macOS sandbox
 run-sandbox linux-trunk-i386    # Create a 32-bit Linux sandbox
 ```
 
